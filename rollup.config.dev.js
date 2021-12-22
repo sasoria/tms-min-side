@@ -4,21 +4,13 @@ import babel from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
-import importmap from "@eik/rollup-plugin";
+import postcss from "rollup-plugin-postcss";
+import postcssLessLoader from "rollup-plugin-postcss-webpack-alias-less-loader";
+import json from "@rollup/plugin-json";
 
 export default {
   input: "src/index.js",
   plugins: [
-    importmap({
-      maps: [
-        {
-          imports: {
-            react: "https://asset-bucket-proxy.dev.intern.nav.no/react-17.esm.js",
-            "react-dom": "https://asset-bucket-proxy.dev.intern.nav.no/react-dom-17.esm.js",
-          },
-        },
-      ],
-    }),
     replace({
       "process.env.NODE_ENV": JSON.stringify("development"),
     }),
@@ -31,8 +23,18 @@ export default {
     commonjs({
       include: ["node_modules/**"],
     }),
+    json(),
+    postcss({
+      extract: false,
+      loaders: [
+        postcssLessLoader({
+          nodeModulePath: "./node_modules",
+          aliases: {},
+        }),
+      ],
+    }),
     serve({
-      open: true,
+      open: false,
       verbose: true,
       contentBase: ["", "dist", "public"],
       historyApiFallback: true,
@@ -42,8 +44,9 @@ export default {
     livereload({ watch: "dist" }),
   ],
   output: {
-    file: "dist/bundle.js",
+    file: "dist/bundle.dev.esm.js",
     format: "esm",
+    inlineDynamicImports: true,
     sourcemap: true,
   },
 };
