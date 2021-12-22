@@ -6,10 +6,8 @@ metadata:
   labels:
     team: min-side
 spec:
-  envFrom:
-    - secret: tms-min-side-secrets
   image: {{version}}
-  port: 8080
+  port: 7100
   liveness:
     path: /tms-min-side/internal/isAlive
     initialDelay: 10

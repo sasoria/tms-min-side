@@ -1,9 +1,20 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+const basePath = "/tms-min-side";
+const buildPath = path.resolve(__dirname, "../dist");
+const server = express();
 
-const app = express();
-app.use(cors({ origin: "http://localhost:3000" }));
+server.use(cors({ origin: "http://localhost:3000" }));
 
-app.use("/dist", express.static("../dist"));
+server.use(basePath, express.static(buildPath));
 
-app.listen(7100, () => console.log("Server listening on port 7100"));
+server.get(`${basePath}/internal/isAlive`, (req, res) => {
+  res.sendStatus(200);
+});
+
+server.get(`${basePath}/internal/isReady`, (req, res) => {
+  res.sendStatus(200);
+});
+
+server.listen(7100, () => console.log("Server listening on port 7100"));
