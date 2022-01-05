@@ -6,6 +6,8 @@ metadata:
   labels:
     team: min-side
 spec:
+  envFrom:
+    - secret: tms-min-side-secrets
   image: {{version}}
   port: 7100
   liveness:
