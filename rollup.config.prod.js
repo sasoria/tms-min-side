@@ -45,7 +45,7 @@ export default {
     }),
   ],
   output: {
-    file: "dist/bundle.esm.js",
+    file: "dist/bundle.js",
     format: "esm",
   },
 };

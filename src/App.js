@@ -1,22 +1,18 @@
 import React from "react";
+import { minSideToppUrl, minSideBunnUrl } from "./urls";
 
 const MinSideTopp = React.lazy(() =>
-  import("http://localhost:7200/build/dist/index.js")
-);
-
-const Veientilarbeid = React.lazy(() =>
-  import("http://localhost:7300/build/dist/index.js")
+  import(minSideToppUrl)
 );
 
 const MinSideBunn = React.lazy(() =>
-  import("http://localhost:7400/build/dist/index.js")
+  import(minSideBunnUrl)
 );
 
 const App = () => {
   return (
     <React.Suspense fallback="Loading...">
       <MinSideTopp />
-      <Veientilarbeid />
       <MinSideBunn />
     </React.Suspense>
   );
