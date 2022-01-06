@@ -7,10 +7,22 @@ import replace from "@rollup/plugin-replace";
 import postcss from "rollup-plugin-postcss";
 import postcssLessLoader from "rollup-plugin-postcss-webpack-alias-less-loader";
 import json from "@rollup/plugin-json";
+import importmap from "@eik/rollup-plugin";
+
+const reactUrl = "https://cdn.skypack.dev/react";
+const reactDomUrl = "https://cdn.skypack.dev/react-dom";
+
+const imports = {
+  react: reactUrl,
+  "react-dom": reactDomUrl,
+};
 
 export default {
   input: "src/index.js",
   plugins: [
+    importmap({
+      maps: [{ imports }],
+    }),
     replace({
       "process.env.NODE_ENV": JSON.stringify("development"),
     }),
@@ -39,12 +51,12 @@ export default {
       contentBase: ["", "dist", "public"],
       historyApiFallback: true,
       host: "localhost",
-      port: 3000,
+      port: 4000,
     }),
     livereload({ watch: "dist" }),
   ],
   output: {
-    file: "dist/bundle.dev.esm.js",
+    file: "dist/bundle.dev.js",
     format: "esm",
     inlineDynamicImports: true,
     sourcemap: true,
