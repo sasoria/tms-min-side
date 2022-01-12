@@ -23,12 +23,14 @@ export default {
     }),
     replace({
       "process.env.NODE_ENV": JSON.stringify("production"),
+      preventAssignment: true,
     }),
     nodeResolve({
       extensions: [".js"],
     }),
     babel({
       presets: ["@babel/preset-react"],
+      babelHelpers: 'bundled',
     }),
     commonjs({
       include: ["node_modules/**"],
