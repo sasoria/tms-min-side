@@ -7,8 +7,8 @@ import json from "@rollup/plugin-json";
 import postcss from "rollup-plugin-postcss";
 import postcssLessLoader from "rollup-plugin-postcss-webpack-alias-less-loader";
 
-const reactUrl = "https://asset-bucket-proxy.dev.intern.nav.no/asset/react/v/17/index.esm.js";
-const reactDomUrl = "https://asset-bucket-proxy.dev.intern.nav.no/asset/react-dom/v/17/index.esm.js";
+const reactUrl = "https://cdn.skypack.dev/react";
+const reactDomUrl = "https://cdn.skypack.dev/react-dom";
 
 const imports = {
   react: reactUrl,
