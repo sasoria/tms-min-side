@@ -6,7 +6,7 @@ const { injectDecoratorServerSide } = require('@navikt/nav-dekoratoren-moduler/s
 
 module.exports = async function configureServer(isDevelopment) {
     const app = express();
-    const indexHtmlLocation = isDevelopment ? './index.development.html' : './dist/client/index.html';
+    const indexHtmlLocation = isDevelopment ? './index.development.html' : './index.html';
 
     const vite = await createViteServer({
         server: { middlewareMode: 'ssr' },
