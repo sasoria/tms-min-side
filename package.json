@@ -4,8 +4,8 @@
   "description": "min-side",
   "main": "index.js",
   "scripts": {
-    "start": "node server.production",
-    "dev": "nodemon server.development",
+    "start": "NODE_ENV=production node server.production",
+    "dev": "NODE_ENV=development nodemon server.development",
     "build": "vite build --outDir dist/client",
     "preview": "vite preview"
   },

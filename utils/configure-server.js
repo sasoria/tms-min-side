@@ -4,7 +4,9 @@ const express = require('express');
 const { createServer: createViteServer } = require('vite');
 const { injectDecoratorServerSide } = require('@navikt/nav-dekoratoren-moduler/ssr');
 
-module.exports = async function configureServer(isDevelopment) {
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+module.exports = async function configureServer() {
     const app = express();
     const indexHtmlLocation = isDevelopment ? './index.development.html' : './index.html';
 
