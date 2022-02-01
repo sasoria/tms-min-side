@@ -5,6 +5,7 @@ const { createServer: createViteServer } = require('vite');
 const { injectDecoratorServerSide } = require('@navikt/nav-dekoratoren-moduler/ssr');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = async function configureServer() {
     const app = express();
@@ -14,7 +15,7 @@ module.exports = async function configureServer() {
         server: { middlewareMode: 'ssr' },
     });
     
-    if (!isDevelopment) {
+    if (isProduction) {
         app.use(express.static('dist/client', { index: false }));
     }
 
@@ -26,7 +27,7 @@ module.exports = async function configureServer() {
             let template = fs.readFileSync(path.resolve(__dirname, '..', indexHtmlLocation), 'utf-8');
             template = await vite.transformIndexHtml(url, template);
             const html = await injectDecoratorServerSide({
-                env: 'prod',
+                env: isDevelopment ? 'dev' : 'prod',
                 filePath: indexHtmlLocation,
                 simple: true,
                 chatbot: false,
