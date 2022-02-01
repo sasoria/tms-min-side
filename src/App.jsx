@@ -12,7 +12,8 @@ const MinSideBunn = React.lazy(() =>
 const App = () => {
   return (
     <React.Suspense fallback="Loading...">
-      test234
+      <MinSideTopp />
+      <MinSideBunn />
     </React.Suspense>
   );
 };

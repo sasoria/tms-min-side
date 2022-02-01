@@ -28,7 +28,7 @@ export default defineConfig({
   build: {
     cssCodeSplit: false,
     rollupOptions: {
-      input: "src/index.jsx",
+      input: "src/renderApp.jsx",
       output: {
         manualChunks: false,
         entryFileNames: `bundle.js`,
