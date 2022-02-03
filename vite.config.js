@@ -43,5 +43,5 @@ export default defineConfig({
     deps: {
       inline: ["@testing-library/user-event"],
     },
-  },
+  }
 });

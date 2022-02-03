@@ -4,8 +4,8 @@ ENV NODE_ENV production
 WORKDIR usr/src/app
 
 COPY package.json .
-COPY server.production .
-COPY utils utils/
+COPY server.production.js .
+COPY index.html .
 COPY dist dist/
 
 RUN npm install
