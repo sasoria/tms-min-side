@@ -35,6 +35,6 @@ app.use("*", async (req, res) => {
   }
 });
 
-app.listen(8080, () => {
-  console.info("Listening on port 8080");
+app.listen(7100, () => {
+  console.info("Listening on port 7100");
 });
