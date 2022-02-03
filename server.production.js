@@ -1,5 +1,7 @@
 const express = require("express");
-const { injectDecoratorServerSide } = require('@navikt/nav-dekoratoren-moduler/ssr');
+const {
+  injectDecoratorServerSide,
+} = require("@navikt/nav-dekoratoren-moduler/ssr");
 
 const app = express();
 
@@ -13,13 +15,16 @@ app.get(`${basePath}/internal/isReady`, (req, res) => {
 });
 
 const indexHtmlLocation = "./index.html";
+
+const decoratorEnv =
+  process.env.NAIS_CLUSTER_NAME === "prod-gcp" ? "prod" : "dev";
+
 app.use(express.static("./dist/client", { index: false }));
 app.use("*", async (req, res) => {
   try {
     const html = await injectDecoratorServerSide({
-      env: "prod",
+      env: decoratorEnv,
       filePath: indexHtmlLocation,
-      simple: true,
       chatbot: false,
       taSurveys: false,
     });

@@ -26,7 +26,6 @@ const {
       const html = await injectDecoratorServerSide({
         env: "dev",
         filePath: indexHtmlLocation,
-        simple: true,
         chatbot: false,
         taSurveys: false,
       });
