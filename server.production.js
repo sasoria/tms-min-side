@@ -19,8 +19,8 @@ const indexHtmlLocation = "./index.html";
 const decoratorEnv =
   process.env.NAIS_CLUSTER_NAME === "prod-gcp" ? "prod" : "dev";
 
-app.use(express.static("./dist/client", { index: false }));
-app.use("*", async (req, res) => {
+app.use('/dist', express.static("dist", { index: false }));
+app.use(/^\/(?!.*dist).*$/, async (req, res) => {
   try {
     const html = await injectDecoratorServerSide({
       env: decoratorEnv,
