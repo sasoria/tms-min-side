@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const {
   injectDecoratorServerSide,
 } = require("@navikt/nav-dekoratoren-moduler/ssr");
@@ -19,7 +20,7 @@ const indexHtmlLocation = "./index.html";
 const decoratorEnv =
   process.env.NAIS_CLUSTER_NAME === "prod-gcp" ? "prod" : "dev";
 
-app.use('/dist', express.static("dist", { index: false }));
+app.use(`${basePath}/dist`, express.static(path.resolve(__dirname, 'dist')));
 app.use(/^\/(?!.*dist).*$/, async (req, res) => {
   try {
     const html = await injectDecoratorServerSide({
