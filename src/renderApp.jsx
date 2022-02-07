@@ -1,10 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
+import Authentication from "./components/Authentication"
+import { QueryClient, QueryClientProvider } from "react-query";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={new QueryClient()}>
+      <Authentication>
+        <App />
+      </Authentication>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
