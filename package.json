@@ -15,6 +15,7 @@
     "@navikt/nav-dekoratoren-moduler": "^1.6.9",
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "react-query": "^3.34.14",
     "vite": "^2.7.2"
   },
   "devDependencies": {
