@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node server.production",
     "dev": "NODE_ENV=development nodemon server.development",
+    "dev-win": "set NODE_ENV=development && nodemon server.development",
     "build": "vite build --outDir dist",
     "preview": "vite preview"
   },
@@ -16,7 +17,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "react-query": "^3.34.14",
-    "vite": "^2.7.2"
+    "vite": "^2.7.2",
+    "vite-plugin-mock": "^2.9.6"
   },
   "devDependencies": {
     "@eik/rollup-plugin": "^4.0.12",
