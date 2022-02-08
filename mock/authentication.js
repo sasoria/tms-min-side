@@ -4,9 +4,9 @@ export default [
       method: "get",
       response: () => {
         return {
-            authenticated: true, 
+            authenticated: true,
             level: "Level3"
         };
       },
     },
-  ];
+];

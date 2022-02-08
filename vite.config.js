@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import importMapPlugin from "@eik/rollup-plugin";
 import { viteMockServe } from "vite-plugin-mock";
 
-
 const reactUrl =
   "https://asset-bucket-proxy.dev.intern.nav.no/asset/react/v/17.0.2/index.esm.js";
 const reactDomUrl =
@@ -34,7 +33,7 @@ const reactDomUrl =
   build: {
     cssCodeSplit: false,
     rollupOptions: {
-      input: "src/renderApp.jsx",
+      input: "src/main.jsx",
       output: {
         manualChunks: false,
         entryFileNames: `bundle.js`,
