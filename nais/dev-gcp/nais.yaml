@@ -8,7 +8,7 @@ metadata:
 spec:
   envFrom:
     - secret: tms-min-side-secrets
-  image: {{version}}
+  image: { { version } }
   port: 7100
   liveness:
     path: /tms-min-side/internal/isAlive
@@ -16,9 +16,6 @@ spec:
   readiness:
     path: /tms-min-side/internal/isReady
     initialDelay: 10
-  prometheus:
-    enabled: true
-    path: /tms-min-side/internal/metrics
   replicas:
     min: 2
     max: 4
