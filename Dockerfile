@@ -4,11 +4,12 @@ ENV NODE_ENV production
 WORKDIR usr/src/app
 
 COPY package.json .
+COPY package-lock.json .
 COPY server.production.js .
 COPY index.html .
 COPY dist dist/
 
-RUN npm install
+RUN npm ci --ignore-scripts
 
 CMD ["npm", "start"]
 
