@@ -1,5 +1,5 @@
 import React from "react";
-import { minSideToppUrl, minSideBunnUrl } from "./urls";
+import { minSideToppUrl, minSideBunnUrl } from "./api/urls";
 
 const MinSideTopp = React.lazy(() =>
   import(minSideToppUrl)
