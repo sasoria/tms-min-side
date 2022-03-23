@@ -1,6 +1,6 @@
 import React from "react";
 import { selectIsError } from "./store/store";
-import ErrorBoundry from "./components/ErrorBoundry";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { minSideToppUrl, minSideBunnUrl } from "./api/urls";
 
 const MinSideTopp = React.lazy(() => import(minSideToppUrl));
@@ -13,12 +13,12 @@ const App = () => {
 
   return (
     <React.Suspense fallback="Loading...">
-      <ErrorBoundry>
+      <ErrorBoundary>
         <MinSideTopp />
-      </ErrorBoundry>
-      <ErrorBoundry>
+      </ErrorBoundary>
+      <ErrorBoundary>
         <MinSideBunn />
-      </ErrorBoundry>
+      </ErrorBoundary>
     </React.Suspense>
   );
 };
