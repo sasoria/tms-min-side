@@ -15,6 +15,8 @@
   "author": "navikt",
   "license": "MIT",
   "dependencies": {
+    "@navikt/ds-css": "0.16.9",
+    "@navikt/ds-tokens": "0.8.4",
     "@navikt/nav-dekoratoren-moduler": "1.6.9",
     "cors": "2.8.5",
     "express": "4.17.2",
