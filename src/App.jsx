@@ -2,6 +2,7 @@ import React from "react";
 import useStore, { selectIsError } from "./store/store";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { minSideToppUrl, minSideBunnUrl } from "./api/urls";
+import FeilMelding from "./components/feilmelding/Feilmelding";
 import "./App.css";
 
 const MinSideTopp = React.lazy(() => import(minSideToppUrl));
@@ -13,7 +14,7 @@ const App = () => {
   return (
     <div className="app">
       <main>
-        {isError ? <h1>Something went wrong...</h1> : null}
+        {isError ? <FeilMelding /> : null}
         <React.Suspense fallback="Loading...">
           <section>
             <ErrorBoundary>
