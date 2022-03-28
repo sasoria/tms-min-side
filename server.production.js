@@ -28,6 +28,7 @@ app.use(/^\/(?!.*dist).*$/, async (req, res) => {
       filePath: indexHtmlLocation,
       chatbot: false,
       taSurveys: false,
+      breadcrumbs: [{ url: `https://person.dev.nav.no/min-side`, title: 'Min Side' }],
     });
     res.status(200).set({ "Content-Type": "text/html" }).send(html);
   } catch (e) {
