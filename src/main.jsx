@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import Authentication from "./components/Authentication"
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import Authentication from "./components/Authentication";
 import { QueryClient, QueryClientProvider } from "react-query";
+import "./main.css";
 
 ReactDOM.render(
   <React.StrictMode>
