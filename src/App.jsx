@@ -16,9 +16,9 @@ const App = () => {
     <Router>
       <Layout isError={isError}>
         <Switch>
-          <Route path="/min-side" exact render={() => renderMicrofrontends([MinSideTopp, MinSideBunn])} />
-          <Route path="/min-side/topp" render={() => renderMicrofrontends([MinSideTopp])} />
-          <Route path="/min-side/bunn" render={() => renderMicrofrontends([MinSideBunn])} />
+          <Route path="/" exact render={() => renderMicrofrontends([MinSideTopp, MinSideBunn])} />
+          <Route path="/topp" render={() => renderMicrofrontends([MinSideTopp])} />
+          <Route path="/bunn" render={() => renderMicrofrontends([MinSideBunn])} />
         </Switch>
       </Layout>
     </Router>
