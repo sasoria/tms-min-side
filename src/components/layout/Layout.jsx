@@ -6,10 +6,8 @@ const Layout = ({ children, isError }) => {
   return (
     <div className="layout">
       <main>
-        <section>
-          {isError ? <FeilMelding /> : null}
-          {children}
-        </section>
+        {isError ? <FeilMelding /> : null}
+        {children}
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
-import redirectToIdPorten from "../../utils/redirect";
-import { minSideProxyUrl } from "../../api/urls";
+import redirectToIdPorten from "../../api/redirect";
+import { minSideProxyUrl } from "../../urls";
 import { fetcher } from "../../api/api";
 
 const Authentication = ({ children }) => {
