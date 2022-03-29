@@ -1,5 +1,5 @@
 import React from "react";
-import withStore from "../store/withStore";
+import withStore from "../../store/withStore";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {

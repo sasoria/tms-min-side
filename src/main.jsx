@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import Authentication from "./components/Authentication";
+import Authentication from "./components/authentication/Authentication";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./main.css";
 
