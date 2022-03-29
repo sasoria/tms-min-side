@@ -1,4 +1,5 @@
 import React from "react";
+import FeilMelding from "../feilmelding/Feilmelding";
 import "./Layout.css";
 
 const Layout = ({ children, isError }) => {
@@ -6,7 +7,7 @@ const Layout = ({ children, isError }) => {
     <div className="layout">
       <main>
         <section>
-          {isError ? <h1>Something went wrong...</h1> : null}
+          {isError ? <FeilMelding /> : null}
           {children}
         </section>
       </main>
