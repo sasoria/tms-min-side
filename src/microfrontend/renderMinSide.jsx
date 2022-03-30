@@ -1,14 +1,17 @@
 import React from "react";
 import ErrorBoundary from "../components/errorboundary/ErrorBoundary";
 
-export const renderMicrofrontends = (microfrontends) => {
+export const renderMinSide = (MinSideTopp, MinSideBunn) => {
   return (
     <React.Suspense fallback="Loading...">
       <ErrorBoundary>
-        {microfrontends.map((Microfrontend) => {
-          return <Microfrontend />;
-        })}
+        <MinSideTopp />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <MinSideBunn />
       </ErrorBoundary>
     </React.Suspense>
   );
 };
+
+export default renderMinSide;

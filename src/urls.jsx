@@ -1,10 +1,10 @@
-import { getEnvironment } from "../utils/environment"
+import { getEnvironment } from "./api/environment";
 
 const MIN_SIDE_PROXY_URL = {
   local: "http://localhost:3000",
   development: "https://person.dev.nav.no/tms-min-side-proxy",
   production: "https://person.nav.no/tms-min-side-proxy",
-}
+};
 
 const MIN_SIDE_TOPP_URL = {
   local: "http://localhost:3000/tms-min-side-topp/bundle.js",
