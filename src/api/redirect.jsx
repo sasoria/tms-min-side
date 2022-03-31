@@ -1,7 +1,7 @@
 import { minSideProxyUrl } from "../urls";
 
 const redirectToIdPorten = () => {
-  window.location.assign(`${minSideProxyUrl}/login?redirect_uri=https://person.dev.nav.no/tms-min-side`);
+  window.location.assign(`${minSideProxyUrl}/login?redirect_uri=https://person.dev.nav.no/minside`);
 };
 
 export default redirectToIdPorten;
