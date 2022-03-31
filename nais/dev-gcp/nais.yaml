@@ -20,7 +20,6 @@ spec:
     min: 2
     max: 4
   ingresses:
-    - "https://person.dev.nav.no/minside"
     - "https://www.dev.nav.no/minside"
   resources:
     limits:
