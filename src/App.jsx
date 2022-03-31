@@ -17,9 +17,9 @@ const App = () => {
     <Router>
       <Layout isError={isError}>
         <Routes>
-          <Route path="/tms-min-side" exact element={renderMinSide(MinSideTopp, MinSideBunn)} />
-          <Route path="/tms-min-side/topp" element={renderMicrofrontend(MinSideTopp)} />
-          <Route path="/tms-min-side/bunn" element={renderMicrofrontend(MinSideBunn)} />
+          <Route path="/minside" exact element={renderMinSide(MinSideTopp, MinSideBunn)} />
+          <Route path="/minside/topp" element={renderMicrofrontend(MinSideTopp)} />
+          <Route path="/minside/bunn" element={renderMicrofrontend(MinSideBunn)} />
         </Routes>
       </Layout>
     </Router>
