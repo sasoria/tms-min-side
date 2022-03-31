@@ -6,7 +6,7 @@ const {
 
 const app = express();
 
-const basePath = "/tms-min-side";
+const basePath = "/minside";
 app.get(`${basePath}/internal/isAlive`, (req, res) => {
   res.sendStatus(200);
 });
