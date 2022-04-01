@@ -1,8 +1,8 @@
 import useStore from "./store";
 
-const withStore = (Store) => (props) => {
+const withStore = (Component) => (props) => {
   const store = useStore();
-  return <Store {...props} store={store} />;
+  return <Component {...props} store={store} />;
 };
 
 export default withStore;

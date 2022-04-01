@@ -8,11 +8,11 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    this.props.store.setIsError();
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
+    this.props.store.setIsError();
     // logErrorToMyService(error, errorInfo);
   }
 
