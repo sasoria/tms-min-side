@@ -1,6 +1,6 @@
 export default [
     {
-      url: "/login/status",
+      url: "/tms-min-side-proxy/login/status",
       method: "get",
       response: () => {
         return {
