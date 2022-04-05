@@ -9,4 +9,13 @@ export default [
         };
       },
     },
+    {
+      url: "/innloggingsstatus",
+      method: "get",
+      response: () => {
+        return {
+          authenticated: true,
+        };
+      },
+    },
 ];
