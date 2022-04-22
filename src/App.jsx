@@ -13,7 +13,7 @@ const App = () => {
       <Layout isError={isError}>
         <Routes>
           <Route path="/minside" exact element={<MinSide />} />
-          <Route path="/minside/varslinger" exact element={<MinSide />} />
+          <Route path="/minside/varslinger" exact element={null} />
         </Routes>
       </Layout>
     </Router>
