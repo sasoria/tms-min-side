@@ -12,16 +12,10 @@ const MIN_SIDE_PROXY_URL = {
   production: "https://person.intern.nav.no/tms-min-side-proxy",
 };
 
-const MIN_SIDE_TOPP_URL = {
-  local: "http://localhost:3000/tms-min-side-topp/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-topp/bundle.js",
-  production: "https://person.intern.nav.no/tms-min-side-topp/bundle.js",
-};
-
-const MIN_SIDE_BUNN_URL = {
-  local: "http://localhost:3000/tms-min-side-bunn/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-bunn/bundle.js",
-  production: "https://person.intern.nav.no/tms-min-side-bunn/bundle.js",
+const MIN_SIDE_TJENESTER = {
+  local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
+  development: "https://person.dev.nav.no/tms-min-side-tjenester/bundle.js",
+  production: "https://person.intern.nav.no/tms-min-side-tjenester/bundle.js",
 };
 
 const LOGINSERVICE_URL = {
@@ -36,9 +30,8 @@ const INNLOGGINGSSTATUS_URL = {
   production: "https://www.nav.no/person/innloggingsstatus/auth",
 };
 
-export const minSideToppUrl = MIN_SIDE_TOPP_URL[getEnvironment()];
-export const minSideBunnUrl = MIN_SIDE_BUNN_URL[getEnvironment()];
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
+export const minSideTjenesterUrl = MIN_SIDE_TJENESTER[getEnvironment()];
 export const minSideProxyUrl = MIN_SIDE_PROXY_URL[getEnvironment()];
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const innloggingsstatusUrl = INNLOGGINGSSTATUS_URL[getEnvironment()];
