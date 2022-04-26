@@ -9,6 +9,7 @@ const Authentication = ({ children }) => {
   const { data: status, isLoading, isError } = useQuery(`${minSideProxyUrl}/login/status`, fetcher);
   const { data: legacyStatus, isLoadingLegacyStatus } = useQuery(authenticationUrl, fetcher, {
     onError: async (error) => {
+      console.log(error.request);
       if (error.request.status === 401 && !isLoading) {
         redirectToLoginService();
       }
