@@ -1,3 +1,5 @@
+import minSideTjenester from "./bundle/min-side-tjenester";
+
 export default [
     {
       url: "/tms-min-side-proxy/login/status",
@@ -10,12 +12,11 @@ export default [
       },
     },
     {
-      url: "/innloggingsstatus",
+      url: "/dittnav-api/authPing",
       method: "get",
-      response: () => {
-        return {
-          authenticated: true,
-        };
+      rawResponse: async (req, res) => {
+        res.statusCode = 401
+        res.end()
       },
     },
 ];
