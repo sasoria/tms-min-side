@@ -1,14 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
 import redirectToIdPorten, { redirectToLoginService } from "../../api/redirect";
-import { authenticationUrl, minSideProxyUrl } from "../../urls";
+import { legacyAuthenticationUrl, authenticationUrl } from "../../urls";
 import { fetcher } from "../../api/api";
 import ContentLoader from "../loader/ContentLoader";
 
 const Authentication = ({ children }) => {
-  const { data: status, isLoading, isError } = useQuery(`${minSideProxyUrl}/login/status`, fetcher);
-  const { data: legacyStatus, isLoadingLegacyStatus } = useQuery(authenticationUrl, fetcher, {
-    enabled: !isLoading,
+  const { data: status, isLoadingStatus, isError } = useQuery(authenticationUrl, fetcher);
+  const { data: legacyStatus, isLoadingLegacyStatus } = useQuery(legacyAuthenticationUrl, fetcher, {
+    enabled: !isLoadingStatus,
     onError: (error) => {
       if (error.response.status === 401) {
         redirectToLoginService();
@@ -16,7 +16,7 @@ const Authentication = ({ children }) => {
     },
   });
 
-  if (isLoading || isLoadingLegacyStatus) {
+  if (isLoadingStatus || isLoadingLegacyStatus) {
     return <ContentLoader size="2xlarge">...</ContentLoader>;
   }
 

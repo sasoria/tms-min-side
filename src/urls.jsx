@@ -12,7 +12,7 @@ const MIN_SIDE_PROXY_URL = {
   production: "https://person.intern.nav.no/tms-min-side-proxy",
 };
 
-const AUTHENTICATION_URL = {
+const LEGACY_AUTHENTICATION_URL = {
   local: "http://localhost:3000/dittnav-api/authPing",
   development: "https://person.dev.nav.no/dittnav-api/authPing",
   production: "https://person.nav.no/dittnav-api/authPing",
@@ -33,5 +33,6 @@ const LOGINSERVICE_URL = {
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const minSideTjenesterUrl = MIN_SIDE_TJENESTER[getEnvironment()];
 export const minSideProxyUrl = MIN_SIDE_PROXY_URL[getEnvironment()];
-export const authenticationUrl = AUTHENTICATION_URL[getEnvironment()];
+export const authenticationUrl = `${MIN_SIDE_PROXY_URL[getEnvironment()]}/login/status`;
+export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment()];
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
