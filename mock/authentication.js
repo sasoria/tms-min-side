@@ -1,5 +1,3 @@
-import minSideTjenester from "./bundle/min-side-tjenester";
-
 export default [
     {
       url: "/tms-min-side-proxy/login/status",

@@ -10,7 +10,7 @@ const Authentication = ({ children }) => {
   const { data: legacyStatus, isLoadingLegacyStatus } = useQuery(authenticationUrl, fetcher, {
     enabled: !isLoading,
     onError: (error) => {
-      if (error.request.status === 401) {
+      if (error.response.status === 401) {
         redirectToLoginService();
       }
     },
