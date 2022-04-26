@@ -14,9 +14,10 @@ export default [
     {
       url: "/dittnav-api/authPing",
       method: "get",
-      rawResponse: async (req, res) => {
-        res.statusCode = 401
-        res.end()
+      response: () => {
+        return {
+          ping: "pong",
+        };
       },
     },
 ];
