@@ -14,8 +14,8 @@ const MIN_SIDE_PROXY_URL = {
 
 const AUTHENTICATION_URL = {
   local: "http://localhost:3000/authPing",
-  development: "https://person.dev.nav.no/person/dittnav-api/authPing",
-  production: "https://person.nav.no/person/dittnav-api/authPing",
+  development: "https://person.dev.nav.no/dittnav-api/authPing",
+  production: "https://person.nav.no/dittnav-api/authPing",
 };
 
 const MIN_SIDE_TJENESTER = {
