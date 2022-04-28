@@ -6,12 +6,12 @@ import { fetcher } from "../../api/api";
 import ContentLoader from "../loader/ContentLoader";
 
 const Authentication = ({ children }) => {
-  const { data: status, isLoadingStatus, isError } = useQuery(authenticationUrl, fetcher);
-  const { data: legacyStatus, isLoadingLegacyStatus } = useQuery(legacyAuthenticationUrl, fetcher, {
+  const { data: status, isLoading: isLoadingStatus, isError } = useQuery(authenticationUrl, fetcher);
+  const { data: legacyStatus, isLoading: isLoadingLegacyStatus } = useQuery(legacyAuthenticationUrl, fetcher, {
     enabled: !isLoadingStatus,
     onError: (error) => {
       if (error.response.status === 401) {
-        // redirectToLoginService();
+        redirectToLoginService();
       }
     },
   });
