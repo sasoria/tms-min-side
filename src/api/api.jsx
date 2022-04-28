@@ -1,6 +1,13 @@
+class FetchError extends Error {
+  constructor(response, message) {
+    super(message);
+    this.response = response;
+  }
+}
+
 const checkResponse = (response) => {
   if (!response.ok) {
-    throw new Error("Fetch request failed");
+    throw new FetchError(response, "Fetch request failed");
   }
 };
 
