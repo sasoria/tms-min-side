@@ -10,11 +10,11 @@ export default [
       },
     },
     {
-      url: "/innloggingsstatus",
+      url: "/dittnav-api/authPing",
       method: "get",
       response: () => {
         return {
-          authenticated: true,
+          ping: "pong",
         };
       },
     },

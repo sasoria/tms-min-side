@@ -1,25 +1,27 @@
 import React from "react";
 import { useQuery } from "react-query";
 import redirectToIdPorten, { redirectToLoginService } from "../../api/redirect";
-import { innloggingsstatusUrl, minSideProxyUrl } from "../../urls";
+import { legacyAuthenticationUrl, authenticationUrl } from "../../urls";
 import { fetcher } from "../../api/api";
 import ContentLoader from "../loader/ContentLoader";
 
 const Authentication = ({ children }) => {
-  const { data: status, isLoading, isError } = useQuery(`${minSideProxyUrl}/login/status`, fetcher);
-  const { data: innloggingsstatus, isLoadingInnloggingsstatus } = useQuery(innloggingsstatusUrl, fetcher);
+  const { data: status, isLoadingStatus, isError } = useQuery(authenticationUrl, fetcher);
+  const { data: legacyStatus, isLoadingLegacyStatus } = useQuery(legacyAuthenticationUrl, fetcher, {
+    enabled: !isLoadingStatus,
+    onError: (error) => {
+      if (error.response.status === 401) {
+        redirectToLoginService();
+      }
+    },
+  });
 
-  if (isLoading || isLoadingInnloggingsstatus) {
+  if (isLoadingStatus || isLoadingLegacyStatus) {
     return <ContentLoader size="2xlarge">...</ContentLoader>;
   }
 
   if (!status?.authenticated || isError) {
     redirectToIdPorten();
-    return null;
-  }
-
-  if (innloggingsstatus?.authenticated === false && status?.authenticated === true) {
-    redirectToLoginService();
     return null;
   }
 
