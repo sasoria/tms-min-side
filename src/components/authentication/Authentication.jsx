@@ -11,7 +11,7 @@ const Authentication = ({ children }) => {
     enabled: !isLoadingStatus,
     onError: (error) => {
       if (error.response.status === 401) {
-        redirectToLoginService();
+        // redirectToLoginService();
       }
     },
   });
