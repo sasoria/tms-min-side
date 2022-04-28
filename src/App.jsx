@@ -15,7 +15,6 @@ const App = () => {
         <Routes>
           <Route path="/minside" exact element={<MinSide />} />
           <Route path="/minside/varslinger" exact element={null} />
-          <Route path="/oversikt" exact element={<Oversikt />} />
         </Routes>
       </Layout>
     </Router>
