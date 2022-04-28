@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import useStore, { selectIsError } from "./store/store";
 import Layout from "./components/layout/Layout";
 import MinSide from "./microfrontend/MinSide";
-import Oversikt from "./microfrontend/Oversikt";
 
 const App = () => {
   const isError = useStore(selectIsError);
