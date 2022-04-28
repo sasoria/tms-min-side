@@ -3,7 +3,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import useStore, { selectIsError } from "./store/store";
 import Layout from "./components/layout/Layout";
-import MinSide from "./microfrontend/MinSide";
+import MinSide from "./micro-frontend/MinSide";
+import ContentLoader from "./components/loader/ContentLoader";
+import ErrorBoundary from "./components/errorboundary/ErrorBoundary";
+import { minSideVarslingerUrl } from "./urls";
+
+const MinSideVarslinger = React.lazy(() => import(minSideVarslingerUrl));
 
 const App = () => {
   const isError = useStore(selectIsError);
@@ -13,7 +18,16 @@ const App = () => {
       <Layout isError={isError}>
         <Routes>
           <Route path="/minside" exact element={<MinSide />} />
-          <Route path="/minside/varslinger" exact element={null} />
+          <Route
+            path="/minside/varslinger"
+            element={
+              <React.Suspense fallback={<ContentLoader />}>
+                <ErrorBoundary>
+                  <MinSideVarslinger />
+                </ErrorBoundary>
+              </React.Suspense>
+            }
+          />
         </Routes>
       </Layout>
     </Router>
