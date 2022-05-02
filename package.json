@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir dist",
+    "build": "vite build --base=/minside/ --outDir dist",
     "preview": "vite preview",
     "pretty-quick": "pretty-quick --pattern \"**/*.*(jsx)\"",
     "prepare": "husky install"
