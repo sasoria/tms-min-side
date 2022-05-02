@@ -5,8 +5,6 @@ WORKDIR usr/src/app
 COPY server server/
 COPY dist dist/
 
-RUN npm ci --ignore-scripts
-
 WORKDIR server
 RUN npm install
 
