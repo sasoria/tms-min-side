@@ -8,7 +8,7 @@ const server = express();
 
 server.disable('x-powered-by');
 
-server.use("/", express.static(buildPath, { index: false }));
+server.use(basePath, express.static(buildPath, { index: false }));
 
 server.get(`${basePath}/internal/isAlive`, async (req, res) => {
   res.sendStatus(200);
