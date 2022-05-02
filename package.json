@@ -4,10 +4,8 @@
   "description": "min-side",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node server.production",
-    "dev": "NODE_ENV=development nodemon server.development",
-    "dev-win": "set NODE_ENV=development && nodemon server.development",
-    "build": "vite build --outDir dist",
+    "dev": "vite",
+    "build": "vite build --base=/minside/ --outDir dist",
     "preview": "vite preview",
     "pretty-quick": "pretty-quick --pattern \"**/*.*(jsx)\"",
     "prepare": "husky install"
@@ -18,13 +16,10 @@
     "@navikt/ds-css": "0.16.9",
     "@navikt/ds-react": "0.17.14",
     "@navikt/ds-tokens": "0.8.4",
-    "@navikt/nav-dekoratoren-moduler": "1.6.9",
-    "cors": "2.8.5",
-    "express": "4.17.2",
     "react-query": "3.34.14",
     "react-router": "6.2.2",
     "react-router-dom": "6.2.2",
-    "vite": "2.7.2",
+    "vite": "2.8.6",
     "vite-plugin-mock": "2.9.6",
     "zustand": "3.7.1"
   },
@@ -32,7 +27,6 @@
     "@eik/rollup-plugin": "4.0.12",
     "@vitejs/plugin-react": "1.0.7",
     "husky": "7.0.0",
-    "nodemon": "2.0.15",
     "pretty-quick": "3.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"

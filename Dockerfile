@@ -2,16 +2,13 @@ FROM node:16-alpine
 ENV NODE_ENV production
 
 WORKDIR usr/src/app
-
-COPY package.json .
-COPY package-lock.json .
-COPY server.production.js .
-COPY index.html .
+COPY server server/
 COPY dist dist/
 
-RUN npm ci --ignore-scripts
+WORKDIR server
+RUN npm install
 
-CMD ["npm", "start"]
+CMD ["node", "./server.js"]
 
 ENV PORT=7100
 EXPOSE $PORT
