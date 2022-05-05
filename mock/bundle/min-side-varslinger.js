@@ -1,4 +1,4 @@
-const minSideTjenester = `var react = {exports: {}};
+const minSideVarslinger = `var react = {exports: {}};
 
 var react_production_min = {};
 
@@ -555,4 +555,4 @@ const App = () => {
 export { App as default };
 `
 
-export default minSideTjenester;
+export default minSideVarslinger;

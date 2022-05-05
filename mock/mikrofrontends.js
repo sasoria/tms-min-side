@@ -1,4 +1,6 @@
-import minSideTjenester from "./bundle/min-side-tjenester";
+import minSideOversikt from "./bundle/min-side-tjenester";
+import minSideTjenester from "./bundle/min-side-oversikt";
+import minSideVarslinger from "./bundle/min-side-varslinger";
 
 export default [
   {
@@ -7,7 +9,7 @@ export default [
     rawResponse: async (req, res) => {
       res.setHeader('Content-Type', 'text/javascript')
       res.statusCode = 200
-      res.end(minSideTjenester)
+      res.end(minSideOversikt)
     },
   },
   {
@@ -25,7 +27,7 @@ export default [
     rawResponse: async (req, res) => {
       res.setHeader('Content-Type', 'text/javascript')
       res.statusCode = 200
-      res.end(minSideTjenester)
+      res.end(minSideVarslinger)
     },
   },
 ];
