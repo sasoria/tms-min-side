@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorBoundary from "../components/errorboundary/ErrorBoundary";
+import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { minSideTjenesterUrl, minSideOversiktUrl } from "../urls";
 
