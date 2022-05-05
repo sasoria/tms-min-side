@@ -5,7 +5,7 @@ import { minSideVarslingerUrl } from "../urls";
 
 const Varslinger = React.lazy(() => import(minSideVarslingerUrl));
 
-export const MinSideVarslinger = () => (
+const MinSideVarslinger = () => (
   <React.Suspense fallback={<ContentLoader />}>
     <ErrorBoundary>
       <Varslinger />

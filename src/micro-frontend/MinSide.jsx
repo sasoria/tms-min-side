@@ -6,7 +6,7 @@ import { minSideTjenesterUrl, minSideOversiktUrl } from "../urls";
 const MinSideTjenester = React.lazy(() => import(minSideTjenesterUrl));
 const MinSideOversikt = React.lazy(() => import(minSideOversiktUrl));
 
-export const MinSide = () => (
+const MinSide = () => (
   <React.Suspense fallback={<ContentLoader />}>
     <ErrorBoundary>
       <MinSideOversikt />
