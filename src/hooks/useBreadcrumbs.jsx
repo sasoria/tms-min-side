@@ -6,7 +6,7 @@ import { text } from "../language/text";
 
 export const useBreadcrumbs = (breadcrumb = []) => {
   const language = useStore(selectLanguage);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   onBreadcrumbClick((breadcrumb) => {
     navigate(breadcrumb.url);
