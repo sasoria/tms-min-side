@@ -28,11 +28,4 @@ export default ({ command }) => ({
       apply: "build",
     },
   ],
-  test: {
-    global: true,
-    environment: "jsdom",
-    deps: {
-      inline: ["@testing-library/user-event"],
-    },
-  },
 });
