@@ -541,7 +541,7 @@ const Personalia = () => {
   }, /*#__PURE__*/React.createElement("h2", null, "MinSideTjenester"));
 };
 
-var css_248z = ".main-topp {\\n  height: auto;\\n  min-height: 100%;\\n}\\n.app {\\n  flex-direction: column;\\n  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n  min-height: 100vh;\\n}\\n";
+var css_248z = ".main-topp {\\n  height: auto;\\n  min-height: 100%;\\n}\\n.app {\\n  flex-direction: column;\\n  display: flex;\\n  justify-content: center;\\n  border: 6px solid white;\\n align-items: center;\\n  min-height: 35vh;\\n}\\n";
 styleInject(css_248z);
 
 const App = () => {

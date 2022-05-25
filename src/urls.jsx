@@ -36,6 +36,12 @@ const MIN_SIDE_TJENESTER = {
   production: "https://person.intern.nav.no/tms-min-side-tjenester/bundle.js",
 };
 
+const ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL = {
+  local: "http://localhost:3000/aia/bundle.js",
+  development: "https://arbeid.dev.nav.no/aia/bundle.js",
+  production: "https://arbeid.intern.nav.no/bundle.js",
+};
+
 const LOGINSERVICE_URL = {
   local: "http://localhost:3000/loginservice",
   development: "https://loginservice.dev.nav.no/login?level=Level3",
@@ -44,6 +50,7 @@ const LOGINSERVICE_URL = {
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const minSideOversiktUrl = MIN_SIDE_OVERSIKT[getEnvironment()];
+export const arbeidsflateForInnlogetArbeidssokerUrl = ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL[getEnvironment()];
 export const minSideTjenesterUrl = MIN_SIDE_TJENESTER[getEnvironment()];
 export const minSideVarslingerUrl = MIN_SIDE_VARSLINGER[getEnvironment()];
 export const minSideProxyUrl = MIN_SIDE_PROXY_URL[getEnvironment()];
