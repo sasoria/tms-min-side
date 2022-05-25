@@ -5,9 +5,7 @@ import { minSideTjenesterUrl, minSideOversiktUrl, arbeidsflateForInnlogetArbeids
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 
 const MinSideTjenester = React.lazy(() => import(minSideTjenesterUrl));
-
 const ArbeidsflateForInnlogetArbeidssoker = React.lazy(() => import(arbeidsflateForInnlogetArbeidssokerUrl));
-
 const MinSideOversikt = React.lazy(() => import(minSideOversiktUrl));
 
 const MinSide = () => {
