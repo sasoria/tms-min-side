@@ -1,4 +1,4 @@
-const minSideOversikt = `var react = {exports: {}};
+const arbeidsflateForInnloggetArbeidssoker = `var react = {exports: {}};
 
 var react_production_min = {};
 
@@ -538,10 +538,10 @@ styleInject(css_248z$1);
 const Personalia = () => {
   return /*#__PURE__*/React.createElement("div", {
     className: "personalia"
-  }, /*#__PURE__*/React.createElement("h2", null, "MinSideOversikt"));
+  }, /*#__PURE__*/React.createElement("h2", null, "ArbeidsflateForInnlogetArbeidssøker"));
 };
 
-var css_248z = ".main-topp {\\n  height: auto;\\n  min-height: 100%;\\n}\\n.app {\\n  flex-direction: column;\\n  display: flex;\\n  justify-content: center;\\n  border: 6px solid white;\\n align-items: center;\\n  min-height: 35vh;\\n}\\n";
+var css_248z = ".main-topp {\\n  height: auto;\\n  min-height: 100%;\\n}\\n.app {\\n  flex-direction: column;\\n  display: flex;\\n  justify-content: center;\\n border: 6px solid white;\\n align-items: center;\\n  min-height: 35vh;\\n}\\n";
 styleInject(css_248z);
 
 const App = () => {
@@ -555,4 +555,4 @@ const App = () => {
 export { App as default };
 `
 
-export default minSideOversikt;
+export default arbeidsflateForInnloggetArbeidssoker;
