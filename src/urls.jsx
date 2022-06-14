@@ -39,7 +39,7 @@ const MIN_SIDE_TJENESTER = {
 const ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL = {
   local: "http://localhost:3000/aia/bundle.js",
   development: "https://arbeid.dev.nav.no/aia/bundle.js",
-  production: "https://arbeid.intern.nav.no/bundle.js",
+  production: "https://arbeid.intern.nav.no/aia/bundle.js",
 };
 
 const LOGINSERVICE_URL = {
