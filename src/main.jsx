@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
 import App from "./App";
 import Authentication from "./components/authentication/Authentication";
 import { injectDecoratorClientSide } from "@navikt/nav-dekoratoren-moduler/csr";
@@ -10,6 +12,14 @@ import "./main.css";
 if (process.env.NODE_ENV === "development") {
   await injectDecoratorClientSide({
     env: "dev",
+  });
+}
+
+if (process.env.NODE_ENV === "production") {
+  Sentry.init({
+    dsn: "https://06300e573bfb494a8241395dc8d43c0d@sentry.gc.nav.no/129",
+    integrations: [new BrowserTracing()],
+    tracesSampleRate: 0.1,
   });
 }
 
