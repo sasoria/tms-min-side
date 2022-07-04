@@ -10,7 +10,7 @@ import { queryClient } from "./api/query";
 import { getEnvironment } from "./api/environment";
 import "./main.css";
 
-if (getEnvironment() === "local") {
+if (process.env.NODE_ENV === "development") {
   await injectDecoratorClientSide({
     env: "dev",
   });
