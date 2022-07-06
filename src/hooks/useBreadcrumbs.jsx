@@ -18,7 +18,7 @@ export const useBreadcrumbs = (breadcrumb = []) => {
       {
         url: dittnavUrl,
         title: text.minSide[language],
-        handleInApp: true,
+        handleInApp: false,
       },
     ];
 
