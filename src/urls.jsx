@@ -21,25 +21,25 @@ const LEGACY_AUTHENTICATION_URL = {
 const MIN_SIDE_VARSLINGER = {
   local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-varslinger/bundle.js",
-  production: "https://person.intern.nav.no/tms-min-side-varslinger/bundle.js",
+  production: "https://www.nav.no/tms-min-side-varslinger/bundle.js",
 };
 
 const MIN_SIDE_OVERSIKT = {
   local: "http://localhost:3000/tms-min-side-oversikt/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-oversikt/bundle.js",
-  production: "https://person.intern.nav.no/tms-min-side-oversikt/bundle.js",
+  production: "https://www.nav.no/tms-min-side-oversikt/bundle.js",
 };
 
 const MIN_SIDE_TJENESTER = {
   local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-tjenester/bundle.js",
-  production: "https://person.intern.nav.no/tms-min-side-tjenester/bundle.js",
+  production: "https://www.nav.no/tms-min-side-tjenester/bundle.js",
 };
 
 const ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL = {
   local: "http://localhost:3000/aia/bundle.js",
   development: "https://veientilarbeid.dev.nav.no/esm/bundle.js",
-  production: "https://arbeid.intern.nav.no/aia/bundle.js",
+  production: "https://veientilarbeid.nav.no/esm/bundle.js",
 };
 
 const LOGINSERVICE_URL = {
