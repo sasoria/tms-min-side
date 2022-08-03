@@ -3,7 +3,7 @@ import { getEnvironment } from "./api/environment";
 const MIN_SIDE_URL = {
   local: "http://localhost:3000/minside",
   development: "https://www.dev.nav.no/minside",
-  production: "https://www.intern.nav.no/minside",
+  production: "https://www.nav.no/minside",
 };
 
 const MIN_SIDE_PROXY_URL = {
