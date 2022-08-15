@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import {
-  minSideTjenesterUrl,
-  minSideOversiktUrl,
-  arbeidsflateForInnlogetArbeidssokerUrl,
-  oppfolgingUrl,
-} from "../urls";
+import { minSideTjenesterUrl, minSideOversiktUrl } from "../urls";
+import { arbeidsflateForInnlogetArbeidssokerUrl, oppfolgingUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useQuery } from "react-query";
 import { fetcher } from "../api/api";
@@ -17,7 +13,7 @@ const ArbeidsflateForInnlogetArbeidssoker = React.lazy(() => import(arbeidsflate
 const MinSideOversikt = React.lazy(() => import(minSideOversiktUrl));
 
 const MinSide = () => {
-  const { data: isUnderOppfolging, isError: isOppfolgingError } = useQuery(oppfolgingUrl, fetcher);
+  const { data, isError: isOppfolgingError } = useQuery(oppfolgingUrl, fetcher);
   const setIsError = useStore(selectSetIsError);
   useBreadcrumbs();
 
@@ -30,7 +26,7 @@ const MinSide = () => {
       <ErrorBoundary>
         <MinSideOversikt />
       </ErrorBoundary>
-      {isUnderOppfolging ? (
+      {data?.erBrukerUnderOppfolging ? (
         <ErrorBoundary>
           <ArbeidsflateForInnlogetArbeidssoker />
         </ErrorBoundary>
