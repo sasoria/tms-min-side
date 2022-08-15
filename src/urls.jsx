@@ -54,6 +54,12 @@ const DITTNAV_URL = {
   production: "https://www.nav.no/person/dittnav",
 };
 
+const OPPFOLGING_URL = {
+  local: "http://localhost:3000/dittnav-api/oppfolging",
+  development: "https://person.dev.nav.no/dittnav-api/oppfolging",
+  production: "https://person.nav.no/dittnav-api/oppfolging",
+};
+
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const minSideOversiktUrl = MIN_SIDE_OVERSIKT[getEnvironment()];
 export const arbeidsflateForInnlogetArbeidssokerUrl = ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL[getEnvironment()];
@@ -64,3 +70,4 @@ export const authenticationUrl = `${MIN_SIDE_PROXY_URL[getEnvironment()]}/login/
 export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment()];
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const dittnavUrl = DITTNAV_URL[getEnvironment()];
+export const oppfolgingUrl = OPPFOLGING_URL[getEnvironment()];
