@@ -7,7 +7,11 @@ import ContentLoader from "../loader/ContentLoader";
 
 const Authentication = ({ children }) => {
   const { data: status, isLoading: isLoadingStatus, isError } = useQuery(authenticationUrl, fetcher);
-  const { data: legacyStatus, isLoading: isLoadingLegacyStatus } = useQuery(legacyAuthenticationUrl, fetcher, {
+  const {
+    data: legacyStatus,
+    isLoading: isLoadingLegacyStatus,
+    error: isLoadingLegacyStatusError,
+  } = useQuery(legacyAuthenticationUrl, fetcher, {
     enabled: !isLoadingStatus,
     onError: (error) => {
       if (error.response.status === 401) {
@@ -16,7 +20,7 @@ const Authentication = ({ children }) => {
     },
   });
 
-  if (isLoadingStatus || isLoadingLegacyStatus) {
+  if (isLoadingStatus || isLoadingLegacyStatus || isLoadingLegacyStatusError) {
     return <ContentLoader size="2xlarge">...</ContentLoader>;
   }
 
