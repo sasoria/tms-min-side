@@ -12,6 +12,12 @@ const MIN_SIDE_PROXY_URL = {
   production: "https://www.nav.no/tms-min-side-proxy",
 };
 
+const BASE_URL = {
+  local: "http://localhost:3000",
+  development: "https://www.dev.nav.no",
+  production: "https://www.nav.no",
+};
+
 const LEGACY_AUTHENTICATION_URL = {
   local: "http://localhost:3000/dittnav-api/authPing",
   development: "https://person.dev.nav.no/dittnav-api/authPing",
@@ -71,3 +77,4 @@ export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment(
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const dittnavUrl = DITTNAV_URL[getEnvironment()];
 export const oppfolgingUrl = OPPFOLGING_URL[getEnvironment()];
+export const baseUrl = BASE_URL[getEnvironment()];
