@@ -1,7 +1,7 @@
 export const text = {
   minSide: {
-    nb: "DittNav",
-    en: "DittNav",
+    nb: "Ditt NAV",
+    en: "Ditt NAV",
   },
   minSideVarslinger: {
     nb: "Varslinger",
