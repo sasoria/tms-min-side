@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import redirectToIdPorten, { redirectToLoginService } from "../../api/redirect";
-import { legacyAuthenticationUrl, authenticationUrl } from "../../urls";
+import { legacyAuthenticationUrl, authenticationUrl, minSideUrl } from "../../urls";
 import { fetcher } from "../../api/api";
 import ContentLoader from "../loader/ContentLoader";
 
@@ -20,12 +20,14 @@ const Authentication = ({ children }) => {
     },
   });
 
+  const redirectUrl = minSideUrl + window.location.pathname;
+
   if (isLoadingStatus || isLoadingLegacyStatus || isLoadingLegacyStatusError) {
     return <ContentLoader size="2xlarge">...</ContentLoader>;
   }
 
   if (!status?.authenticated || isError) {
-    redirectToIdPorten();
+    redirectToIdPorten(redirectUrl);
     return null;
   }
 
