@@ -9,7 +9,6 @@ const getHtmlWithDecorator = (filePath) =>
     enforceLogin: false,
     level: 'Level4',
     redirectToApp: true,
-    utloggingsvarsel: true,
   });
 
 module.exports = getHtmlWithDecorator;
