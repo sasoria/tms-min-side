@@ -54,12 +54,6 @@ const LOGINSERVICE_URL = {
   production: "https://loginservice.nav.no/login?level=Level3",
 };
 
-const DITTNAV_URL = {
-  local: "http://localhost:3000/dittnav",
-  development: "https://www.dev.nav.no/person/dittnav",
-  production: "https://www.nav.no/person/dittnav",
-};
-
 const OPPFOLGING_URL = {
   local: "http://localhost:3000/dittnav-api/oppfolging",
   development: "https://person.dev.nav.no/dittnav-api/oppfolging",
@@ -75,6 +69,5 @@ export const minSideProxyUrl = MIN_SIDE_PROXY_URL[getEnvironment()];
 export const authenticationUrl = `${MIN_SIDE_PROXY_URL[getEnvironment()]}/login/status`;
 export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment()];
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
-export const dittnavUrl = DITTNAV_URL[getEnvironment()];
 export const oppfolgingUrl = OPPFOLGING_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];

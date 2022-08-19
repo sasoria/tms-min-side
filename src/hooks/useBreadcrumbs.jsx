@@ -16,7 +16,7 @@ export const useBreadcrumbs = (breadcrumb = []) => {
   useEffect(() => {
     const baseBreadcrumbs = [
       {
-        url: dittnavUrl,
+        url: "/minside",
         title: text.minSide[language],
         handleInApp: false,
       },
