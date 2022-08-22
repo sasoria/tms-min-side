@@ -21,7 +21,7 @@ spec:
     initialDelay: 10
   replicas:
     min: 2
-    max: 4
+    max: 6
   ingresses:
     - "https://person.intern.nav.no/minside"
     - "https://www.intern.nav.no/minside"
