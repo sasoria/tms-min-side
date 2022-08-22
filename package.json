@@ -29,7 +29,7 @@
     "zustand": "3.7.1"
   },
   "devDependencies": {
-    "@eik/rollup-plugin": "4.0.31",
+    "@eik/rollup-plugin": "4.0.32",
     "@vitejs/plugin-react": "1.0.7",
     "husky": "7.0.0",
     "pretty-quick": "3.1.3",
