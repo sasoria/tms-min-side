@@ -1,7 +1,7 @@
 export const text = {
   minSide: {
-    nb: "Min Side",
-    en: "My Page",
+    nb: "Min side",
+    en: "My page",
   },
   minSideVarslinger: {
     nb: "Varslinger",
