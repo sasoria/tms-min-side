@@ -1,12 +1,12 @@
 import React from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import { minSideVarslingerUrl } from "../urls";
+import { arbeidsflateForInnlogetArbeidssokerUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import useStore, { selectLanguage } from "../store/store";
 import { text } from "../language/text";
 
-const ArbeidsflateForInnloggetArbeidssoker = React.lazy(() => import(minSideVarslingerUrl));
+const ArbeidsflateForInnloggetArbeidssoker = React.lazy(() => import(arbeidsflateForInnlogetArbeidssokerUrl));
 
 const Arbeidssoker = () => {
   const language = useStore(selectLanguage);
