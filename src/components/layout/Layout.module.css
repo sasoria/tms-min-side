@@ -11,13 +11,13 @@ main {
 }
 
 @media (min-width: 0px) {
-  .main {
+  .layout {
     margin: 0 1rem;
   }
 }
 
 @media (min-width: 648px) {
-  .main {
+  .layout {
     margin: 0;
   }
 }
