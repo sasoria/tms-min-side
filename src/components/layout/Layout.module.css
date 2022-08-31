@@ -9,3 +9,15 @@ main {
   width: 100%;
   max-width: 808px;
 }
+
+@media (min-width: 0px) {
+  .main {
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 648px) {
+  .main {
+    margin: 0;
+  }
+}
