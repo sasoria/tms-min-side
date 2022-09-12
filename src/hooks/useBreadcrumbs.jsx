@@ -3,7 +3,6 @@ import { onBreadcrumbClick, setBreadcrumbs } from "@navikt/nav-dekoratoren-modul
 import useStore, { selectLanguage } from "../store/store";
 import { useNavigate } from "react-router";
 import { text } from "../language/text";
-import { dittnavUrl } from "../urls";
 
 export const useBreadcrumbs = (breadcrumb = []) => {
   const language = useStore(selectLanguage);
@@ -16,7 +15,7 @@ export const useBreadcrumbs = (breadcrumb = []) => {
   useEffect(() => {
     const baseBreadcrumbs = [
       {
-        url: dittnavUrl,
+        url: "/minside",
         title: text.minSide[language],
         handleInApp: false,
       },

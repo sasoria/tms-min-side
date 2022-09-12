@@ -5,6 +5,9 @@ metadata:
   namespace: min-side
   labels:
     team: min-side
+  annotations:
+    config.linkerd.io/proxy-memory-limit: "512Mi"
+    config.linkerd.io/proxy-memory-request: "128Mi"
 spec:
   envFrom:
     - secret: tms-min-side-secrets
@@ -18,7 +21,7 @@ spec:
     initialDelay: 10
   replicas:
     min: 2
-    max: 4
+    max: 6
   ingresses:
     - "https://person.intern.nav.no/minside"
     - "https://www.intern.nav.no/minside"
@@ -26,7 +29,7 @@ spec:
   resources:
     limits:
       cpu: "3"
-      memory: 768Mi
+      memory: 1268Mi
     requests:
-      cpu: "50m"
-      memory: 256Mi
+      cpu: "500m"
+      memory: 1024Mi

@@ -1,11 +1,15 @@
 export const text = {
   minSide: {
-    nb: "Ditt NAV",
-    en: "Ditt NAV",
+    nb: "Min side",
+    en: "My page",
   },
   minSideVarslinger: {
     nb: "Varslinger",
     en: "Notifications",
+  },
+  arbeidssoker: {
+    nb: "Arbeidssøker",
+    en: "Job seeker",
   },
   feilmelding: {
     nb: "Vi har for øyeblikket tekniske problemer. Dette kan føre til at du ikke får opp all informasjon. Vennligst prøv igjen senere.",
