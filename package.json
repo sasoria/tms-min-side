@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "vite build --base=/minside/ --outDir dist",
     "preview": "vite preview",
-    "pretty-quick": "pretty-quick --pattern \"**/*.*(jsx)\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "lint:staged": "eslint -c .eslintrc.pre-commit.js --fix --ext .js,.jsx ."
   },
   "author": "navikt",
   "license": "MIT",
@@ -31,12 +32,28 @@
   "devDependencies": {
     "@eik/rollup-plugin": "4.0.32",
     "@vitejs/plugin-react": "1.0.7",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
     "husky": "7.0.0",
-    "pretty-quick": "3.1.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "prettier": {
     "printWidth": 120
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint -c .eslintrc.pre-commit.js --fix",
+      "prettier --cache --write",
+      "git add"
+    ],
+    "*.{css,md,html,json}": [
+      "prettier --cache --write",
+      "git add"
+    ]
   }
 }
