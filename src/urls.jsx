@@ -20,8 +20,8 @@ const BASE_URL = {
 
 const LEGACY_AUTHENTICATION_URL = {
   local: "http://localhost:3000/dittnav-api/authPing",
-  development: "https://person.dev.nav.no/dittnav-api/authPing",
-  production: "https://person.nav.no/dittnav-api/authPing",
+  development: "https://www.dev.nav.no/dittnav-api/authPing",
+  production: "https://www.nav.no/dittnav-api/authPing",
 };
 
 const MIN_SIDE_VARSLINGER = {
@@ -56,8 +56,8 @@ const LOGINSERVICE_URL = {
 
 const OPPFOLGING_URL = {
   local: "http://localhost:3000/dittnav-api/oppfolging",
-  development: "https://person.dev.nav.no/dittnav-api/oppfolging",
-  production: "https://person.nav.no/dittnav-api/oppfolging",
+  development: "https://www.dev.nav.no/dittnav-api/oppfolging",
+  production: "https://www.nav.no/dittnav-api/oppfolging",
 };
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
