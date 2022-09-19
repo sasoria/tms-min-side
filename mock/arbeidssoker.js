@@ -1,10 +1,10 @@
 export default [
   {
-    url: "/dittnav-api/oppfolging",
+    url: "/dittnav-api/arbeidssoker",
     method: "get",
     response: () => {
       return {
-        erBrukerUnderOppfolging: false
+        erArbeidssoker: false,
       };
     },
   },
