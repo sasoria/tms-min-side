@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
 import App from "./App";
@@ -24,13 +24,15 @@ if (getEnvironment() === "production") {
   });
 }
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+
+root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <Authentication>
         <App />
       </Authentication>
     </QueryClientProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
