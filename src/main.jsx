@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
 import App from "./App";
@@ -25,7 +25,7 @@ if (getEnvironment() === "production") {
 }
 
 const container = document.getElementById("root");
-const root = createRoot(container);
+const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
