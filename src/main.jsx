@@ -9,6 +9,7 @@ import { QueryClientProvider } from "react-query";
 import { queryClient } from "./api/query";
 import { getEnvironment } from "./api/environment";
 import "./main.css";
+import { initializeAmplitude } from "./amplitude/amplitude";
 
 if (process.env.NODE_ENV === "development") {
   await injectDecoratorClientSide({

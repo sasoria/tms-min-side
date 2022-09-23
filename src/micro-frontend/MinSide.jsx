@@ -7,7 +7,7 @@ import useStore, { selectSetIsError } from "../store/store";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useQuery } from "react-query";
 import { fetcher } from "../api/api";
-import { updateUserProperties } from "../amplitude/amplitude";
+import { initializeAmplitude, updateUserProperties } from "../amplitude/amplitude";
 
 const MinSideTjenester = React.lazy(() => import(minSideTjenesterUrl));
 const ArbeidsflateForInnlogetArbeidssoker = React.lazy(() => import(arbeidsflateForInnlogetArbeidssokerUrl));
@@ -16,10 +16,13 @@ const MinSideOversikt = React.lazy(() => import(minSideOversiktUrl));
 const MinSide = () => {
   const { data, isSuccess } = useQuery(arbeidssokerUrl, fetcher, { onError: useStore(selectSetIsError) });
 
+  initializeAmplitude();
   useEffect(() => {
     if (isSuccess) {
       updateUserProperties(data?.erArbeidssoker);
+      console.log("amplitude kjørt");
     }
+    console.log("amplitude ikke kjørt");
   }, [data]);
 
   useBreadcrumbs();
