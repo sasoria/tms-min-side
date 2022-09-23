@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { minSideTjenesterUrl, minSideOversiktUrl } from "../urls";
@@ -16,9 +16,11 @@ const MinSideOversikt = React.lazy(() => import(minSideOversiktUrl));
 const MinSide = () => {
   const { data, isSuccess } = useQuery(arbeidssokerUrl, fetcher, { onError: useStore(selectSetIsError) });
 
-  if (isSuccess) {
-    updateUserProperties(data?.erArbeidssoker);
-  }
+  useEffect(() => {
+    if (isSuccess) {
+      updateUserProperties(data?.erArbeidssoker);
+    }
+  }, [data]);
 
   useBreadcrumbs();
 
