@@ -14,13 +14,10 @@ const ArbeidsflateForInnlogetArbeidssoker = React.lazy(() => import(arbeidsflate
 const MinSideOversikt = React.lazy(() => import(minSideOversiktUrl));
 
 const MinSide = () => {
-  const { data, isSuccess } = useQuery(arbeidssokerUrl, fetcher, { onError: useStore(selectSetIsError) });
-
-  useEffect(() => {
-    if (isSuccess) {
-      updateUserProperties(data?.erArbeidssoker);
-    }
-  }, [data]);
+  const { data } = useQuery(arbeidssokerUrl, fetcher, {
+    onError: useStore(selectSetIsError),
+    onSuccess: (data) => updateUserProperties(data.erArbeidssoker),
+  });
 
   useBreadcrumbs();
 
