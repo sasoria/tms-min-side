@@ -56,8 +56,8 @@ const LOGINSERVICE_URL = {
 
 const ARBEIDSSOKER_URL = {
   local: "http://localhost:3000/dittnav-api/arbeidssoker",
-  development: "https://www.dev.nav.no/bakveientilarbeid/er-arbeidssoker",
-  production: "https://www.nav.no/bakveientilarbeid/er-arbeidssoker",
+  development: "https://www.dev.nav.no/aia-backend/er-arbeidssoker",
+  production: "https://www.nav.no/aia-backend/er-arbeidssoker",
 };
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
