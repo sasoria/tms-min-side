@@ -26,8 +26,8 @@ const LEGACY_AUTHENTICATION_URL = {
 
 const MIN_SIDE_VARSLINGER = {
   local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
-  development: "https://cdn.dev.nav.no/min-side/tms-min-side-varslinger.js",
-  production: "https://cdn.nav.no/min-side/tms-min-side-varslinger.js",
+  development: "https://cdn.dev.nav.no/min-side/tms-min-side-varslinger/tms-min-side-varslinger.js",
+  production: "https://cdn.nav.no/min-side/tms-min-side-varslinger/tms-min-side-varslinger.js",
 };
 
 const MIN_SIDE_OVERSIKT = {
