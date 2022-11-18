@@ -38,8 +38,8 @@ const MIN_SIDE_OVERSIKT = {
 
 const MIN_SIDE_TJENESTER = {
   local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-tjenester/bundle.js",
-  production: "https://www.nav.no/tms-min-side-tjenester/bundle.js",
+  development: "https://cdn.dev.nav.no/min-side/tms-min-side-tjenester/tms-min-side-tjenester.js",
+  production: "https://cdn.nav.no/min-side/tms-min-side-tjenester/tms-min-side-tjenester.js",
 };
 
 const ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL = {
