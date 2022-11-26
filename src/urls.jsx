@@ -26,20 +26,20 @@ const LEGACY_AUTHENTICATION_URL = {
 
 const MIN_SIDE_VARSLINGER = {
   local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
-  development: "https://cdn.dev.nav.no/min-side/tms-min-side-varslinger/tms-min-side-varslinger.js",
-  production: "https://cdn.nav.no/min-side/tms-min-side-varslinger/tms-min-side-varslinger.js",
+  development: "https://person.dev.nav.no/tms-min-side-varslinger/tms-min-side-varslinger.js",
+  production: "https://www.nav.no/tms-min-side-varslinger/tms-min-side-varslinger.js",
 };
 
 const MIN_SIDE_OVERSIKT = {
   local: "http://localhost:3000/tms-min-side-oversikt/bundle.js",
-  development: "https://cdn.dev.nav.no/min-side/tms-min-side-oversikt/tms-min-side-oversikt.js",
-  production: "https://cdn.nav.no/min-side/tms-min-side-oversikt/tms-min-side-oversikt.js",
+  development: "https://person.dev.nav.no/tms-min-side-oversikt/tms-min-side-oversikt.js",
+  production: "https://www.nav.no/tms-min-side-oversikt/tms-min-side-oversikt.js",
 };
 
 const MIN_SIDE_TJENESTER = {
   local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
-  development: "https://cdn.dev.nav.no/min-side/tms-min-side-tjenester/tms-min-side-tjenester.js",
-  production: "https://cdn.nav.no/min-side/tms-min-side-tjenester/tms-min-side-tjenester.js",
+  development: "https://person.dev.nav.no/tms-min-side-tjenester/tms-min-side-tjenester.js",
+  production: "https://www.nav.no/tms-min-side-tjenester/tms-min-side-tjenester.js",
 };
 
 const ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL = {
