@@ -7,6 +7,10 @@ export const text = {
     nb: "Varslinger",
     en: "Notifications",
   },
+  utkast: {
+    nb: "Utkast",
+    en: "Draft",
+  },
   arbeidssoker: {
     nb: "Arbeidssøker",
     en: "Job seeker",
