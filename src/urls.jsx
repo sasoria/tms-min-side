@@ -60,6 +60,12 @@ const ARBEIDSSOKER_URL = {
   production: "https://www.nav.no/aia-backend/er-arbeidssoker",
 };
 
+const UTKAST_URL = {
+  local: "http://localhost:3000/tms-utkast-mikrofrontend/bundle.js",
+  development: "https://cdn.dev.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
+  production: "https://cdn.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
+};
+
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const minSideOversiktUrl = MIN_SIDE_OVERSIKT[getEnvironment()];
 export const arbeidsflateForInnlogetArbeidssokerUrl = ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL[getEnvironment()];
@@ -70,4 +76,5 @@ export const authenticationUrl = `${MIN_SIDE_PROXY_URL[getEnvironment()]}/login/
 export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment()];
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const arbeidssokerUrl = ARBEIDSSOKER_URL[getEnvironment()];
+export const utkastUrl = UTKAST_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
