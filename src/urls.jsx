@@ -62,7 +62,7 @@ const ARBEIDSSOKER_URL = {
 
 const UTKAST_URL = {
   local: "http://localhost:3000/tms-utkast-mikrofrontend/bundle.js",
-  development: "https://cdn.dev.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
+  development: "https://cdn.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
   production: "https://cdn.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
 };
 
