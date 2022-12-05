@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build:dev": "vite build --base=https://cdn.dev.nav.no/min-side/tms-min-side/ --outDir dist",
-    "build:prod": "vite build --base=https://cdn.nav.no/min-side/tms-min-side/ --outDir dist",
+    "build": "vite build --base=https://cdn.nav.no/min-side/tms-min-side/ --outDir dist",
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .js,.jsx .",
