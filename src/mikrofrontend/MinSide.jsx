@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { minSideTjenesterUrl, minSideOversiktUrl } from "../urls";
 import { arbeidsflateForInnlogetArbeidssokerUrl, arbeidssokerUrl } from "../urls";
-import useStore, { selectSetIsError } from "../store/store";
+import useStore, { selectIsError, selectSetIsError } from "../store/store";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useQuery } from "react-query";
 import { fetcher } from "../api/api";
 import { updateUserProperties } from "../amplitude/amplitude";
+import Layout from "../components/layout/Layout";
 
 const MinSideTjenester = React.lazy(() => import(minSideTjenesterUrl));
 const ArbeidsflateForInnlogetArbeidssoker = React.lazy(() => import(arbeidsflateForInnlogetArbeidssokerUrl));
@@ -19,22 +20,25 @@ const MinSide = () => {
     onSuccess: (data) => updateUserProperties(data.erArbeidssoker),
   });
 
+  const isError = useStore(selectIsError);
   useBreadcrumbs();
 
   return (
-    <React.Suspense fallback={<ContentLoader />}>
-      <ErrorBoundary>
-        <MinSideOversikt />
-      </ErrorBoundary>
-      {data?.erArbeidssoker ? (
+    <Layout isError={isError}>
+      <React.Suspense fallback={<ContentLoader />}>
         <ErrorBoundary>
-          <ArbeidsflateForInnlogetArbeidssoker />
+          <MinSideOversikt />
         </ErrorBoundary>
-      ) : null}
-      <ErrorBoundary>
-        <MinSideTjenester />
-      </ErrorBoundary>
-    </React.Suspense>
+        {data?.erArbeidssoker ? (
+          <ErrorBoundary>
+            <ArbeidsflateForInnlogetArbeidssoker />
+          </ErrorBoundary>
+        ) : null}
+        <ErrorBoundary>
+          <MinSideTjenester />
+        </ErrorBoundary>
+      </React.Suspense>
+    </Layout>
   );
 };
 

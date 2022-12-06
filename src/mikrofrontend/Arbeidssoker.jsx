@@ -3,13 +3,15 @@ import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { arbeidsflateForInnlogetArbeidssokerUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
-import useStore, { selectLanguage } from "../store/store";
+import useStore, { selectIsError, selectLanguage } from "../store/store";
 import { text } from "../language/text";
+import Layout from "../components/layout/Layout";
 
 const ArbeidsflateForInnloggetArbeidssoker = React.lazy(() => import(arbeidsflateForInnlogetArbeidssokerUrl));
 
 const Arbeidssoker = () => {
   const language = useStore(selectLanguage);
+  const isError = useStore(selectIsError);
 
   useBreadcrumbs([
     {
@@ -20,11 +22,13 @@ const Arbeidssoker = () => {
   ]);
 
   return (
-    <React.Suspense fallback={<ContentLoader />}>
-      <ErrorBoundary>
-        <ArbeidsflateForInnloggetArbeidssoker />
-      </ErrorBoundary>
-    </React.Suspense>
+    <Layout isError={isError}>
+      <React.Suspense fallback={<ContentLoader />}>
+        <ErrorBoundary>
+          <ArbeidsflateForInnloggetArbeidssoker />
+        </ErrorBoundary>
+      </React.Suspense>
+    </Layout>
   );
 };
 

@@ -24,11 +24,9 @@ const Utkast = () => {
   setParams({
     utilsBackground: "white",
   });
-
   if (getEnvironment() === "production") {
     return null;
   }
-
   return (
     <React.Suspense fallback={<ContentLoader />}>
       <ErrorBoundary>
