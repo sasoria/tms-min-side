@@ -62,8 +62,8 @@ const ARBEIDSSOKER_URL = {
 
 const UTKAST_URL = {
   local: "http://localhost:3000/tms-utkast-mikrofrontend/bundle.js",
-  development: "https://cdn.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
-  production: "https://cdn.nav.no/min-side/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
+  development: "https://www.dev.nav.no/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
+  production: "https://www.nav.no/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
 };
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
