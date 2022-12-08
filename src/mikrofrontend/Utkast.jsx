@@ -6,6 +6,7 @@ import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import useStore, { selectLanguage } from "../store/store";
 import { text } from "../language/text";
 import { getEnvironment } from "../api/environment";
+import { setParams } from "@navikt/nav-dekoratoren-moduler";
 
 const UtkastMikrofrontend = React.lazy(() => import(utkastUrl));
 
@@ -20,6 +21,12 @@ const Utkast = () => {
     },
   ]);
 
+  setParams({
+    utilsBackground: "white",
+  });
+  if (getEnvironment() === "production") {
+    return null;
+  }
   return (
     <React.Suspense fallback={<ContentLoader />}>
       <ErrorBoundary>
