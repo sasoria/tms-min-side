@@ -32,8 +32,8 @@ const MIN_SIDE_VARSLINGER = {
 
 const MIN_SIDE_OVERSIKT = {
   local: "http://localhost:3000/tms-min-side-oversikt/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-oversikt/tms-min-side-oversikt.js",
-  production: "https://www.nav.no/tms-min-side-oversikt/tms-min-side-oversikt.js",
+  development: "https://person.dev.nav.no/tms-oversikt-mikrofrontend/bundle.js",
+  production: "https://www.nav.no/tms-oversikt-mikrofrontend/bundle.js",
 };
 
 const MIN_SIDE_TJENESTER = {
