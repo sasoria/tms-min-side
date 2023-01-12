@@ -1,11 +1,12 @@
-@import '../node_modules/@navikt/ds-css';
+@import "../node_modules/@navikt/ds-css";
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
-  background-color: var(--navds-semantic-color-canvas-background);
+  background-color: var(--a-bg-default);
 }
 
 .page-wrapper {
