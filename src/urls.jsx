@@ -32,8 +32,8 @@ const MIN_SIDE_VARSLINGER = {
 
 const MIN_SIDE_OVERSIKT = {
   local: "http://localhost:3000/tms-min-side-oversikt/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-oversikt/tms-min-side-oversikt.js",
-  production: "https://www.nav.no/tms-min-side-oversikt/tms-min-side-oversikt.js",
+  development: "https://person.dev.nav.no/tms-oversikt-mikrofrontend/bundle.js",
+  production: "https://www.nav.no/tms-oversikt-mikrofrontend/bundle.js",
 };
 
 const MIN_SIDE_TJENESTER = {
@@ -66,6 +66,12 @@ const UTKAST_URL = {
   production: "https://www.nav.no/tms-utkast-mikrofrontend/tms-utkast-mikrofrontend.js",
 };
 
+const MELDEKORT_MIKROFRONTEND_URL = {
+  local: "http://localhost:3000/meldekort/bundle.js",
+  development: "https://www.dev.nav.no/tms-meldekort-mikrofrontend/tms-meldekort-mikrofrontend.js",
+  production: "https://www.nav.no/tms-meldekort-mikrofrontend/tms-meldekort-mikrofrontend.js",
+};
+
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const minSideOversiktUrl = MIN_SIDE_OVERSIKT[getEnvironment()];
 export const arbeidsflateForInnlogetArbeidssokerUrl = ARBEIDSFLATE_FOR_INNLOGGET_ARBERDSSOKER_URL[getEnvironment()];
@@ -78,3 +84,4 @@ export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const arbeidssokerUrl = ARBEIDSSOKER_URL[getEnvironment()];
 export const utkastUrl = UTKAST_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
+export const meldekortMikrofrontendUrl = MELDEKORT_MIKROFRONTEND_URL[getEnvironment()];
