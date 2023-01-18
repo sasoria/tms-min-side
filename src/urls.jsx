@@ -68,8 +68,8 @@ const UTKAST_URL = {
 
 const MELDEKORT_MIKROFRONTEND_URL = {
   local: "http://localhost:3000/meldekort/bundle.js",
-  development: "https://www.dev.nav.no/tms-meldekort-mikrofrontend/tms-meldekort-mikrofrontend.js",
-  production: "https://www.nav.no/tms-meldekort-mikrofrontend/tms-meldekort-mikrofrontend.js",
+  development: "https://www.dev.nav.no/meldekort-mikrofrontend/meldekort-mikrofrontend.js",
+  production: "https://www.nav.no/meldekort-mikrofrontend/meldekort-mikrofrontend.js",
 };
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
