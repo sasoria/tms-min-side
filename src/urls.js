@@ -60,7 +60,7 @@ const TJENESTER_BASE_URL = {
   production: "https://www.nav.no/tms-min-side-tjenester",
 };
 
-const VARSLINGER_BASE_URL = {
+const TIDLIGERE_VARSLER_BASE_URL = {
   local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-varslinger",
   production: "https://www.nav.no/tms-min-side-varslinger",
@@ -70,6 +70,12 @@ const UTKAST_BASE_URL = {
   local: "http://localhost:3000/tms-utkast-mikrofrontend/bundle.js",
   development: "https://www.dev.nav.no/tms-utkast-mikrofrontend",
   production: "https://www.nav.no/tms-utkast-mikrofrontend",
+};
+
+const VARSLER_URL = {
+  local: "http://localhost:3000/tms-varsler/bundle.js",
+  development: "https://www.dev.nav.no/tms-varsler/tms-varsler.js",
+  production: "https://www.nav.no/tms-varsler/tms-varsler.js",
 };
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
@@ -84,9 +90,10 @@ export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];
 export const oversiktBaseUrl = OVERSIKT_BASE_URL[getEnvironment()];
 export const oversiktManifestUrl = `${OVERSIKT_BASE_URL[getEnvironment()]}/manifest.json`;
+export const tidligereVarslerBaseUrl = TIDLIGERE_VARSLER_BASE_URL[getEnvironment()];
+export const tidligereVarslerManifestUrl = `${TIDLIGERE_VARSLER_BASE_URL[getEnvironment()]}/manifest.json`;
 export const tjenesterBaseUrl = TJENESTER_BASE_URL[getEnvironment()];
 export const tjenesterManifestUrl = `${TJENESTER_BASE_URL[getEnvironment()]}/manifest.json`;
 export const utkastBaseUrl = UTKAST_BASE_URL[getEnvironment()];
 export const utkastManifestUrl = `${UTKAST_BASE_URL[getEnvironment()]}/manifest.json`;
-export const varslingerBaseUrl = VARSLINGER_BASE_URL[getEnvironment()];
-export const varslingerManifestUrl = `${VARSLINGER_BASE_URL[getEnvironment()]}/manifest.json`;
+export const varslerUrl = VARSLER_URL[getEnvironment()];
