@@ -12,7 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/minside" exact element={<MinSide />} />
         <Route path="/minside/varslinger" element={<TidligereVarsler />} />
-        <Route path="/minside/tidligere-varslinger" element={<TidligereVarsler />} />
+        <Route path="/minside/tidligere-varsler" element={<TidligereVarsler />} />
         <Route path="/minside/varsler" element={<Varsler />} />
         <Route path="/minside/arbeidssoker" element={<Arbeidssoker />} />
         <Route path="/minside/utkast" element={<Utkast />} />
