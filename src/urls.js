@@ -100,7 +100,6 @@ export const arbeidssokerUrl = ARBEIDSSOKER_URL[getEnvironment()];
 export const aiaBaseCdnUrl = AIA_BASE_CDN_URL[getEnvironment()];
 export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];
-export const oversiktBaseUrl = OVERSIKT_BASE_URL[getEnvironment()];
 export const oversiktBaseCdnUrl = OVERSIKT_BASE_CDN_URL[getEnvironment()];
 export const oversiktManifestUrl = `${OVERSIKT_BASE_URL[getEnvironment()]}/manifest.json`;
 export const tjenesterBaseCdnUrl = TJENESTER_BASE_CDN_URL[getEnvironment()];
