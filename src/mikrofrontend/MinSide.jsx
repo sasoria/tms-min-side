@@ -1,7 +1,7 @@
 import React from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import { meldekortUrl, oversiktManifestUrl, oversiktBaseUrl, aiaBaseCdnUrl, tjenesterBaseCdnUrl } from "../urls";
+import { meldekortUrl, oversiktManifestUrl, aiaBaseCdnUrl, tjenesterBaseCdnUrl, oversiktBaseCdnUrl } from "../urls";
 import { tjenesterManifestUrl } from "../urls";
 import { aiaManifestUrl, arbeidssokerUrl } from "../urls";
 import { aiaEntry, bundle, oversiktEntry, tjenesterEntry } from "./entrypoints";
@@ -34,7 +34,7 @@ const MinSide = () => {
     import(`${aiaBaseCdnUrl}/${aiaManifest[aiaEntry][bundle]}`)
   );
 
-  const Oversikt = React.lazy(() => import(`${oversiktBaseUrl}/${oversiktManifest[oversiktEntry][bundle]}`));
+  const Oversikt = React.lazy(() => import(`${oversiktBaseCdnUrl}/${oversiktManifest[oversiktEntry][bundle]}`));
   const Tjenester = React.lazy(() => import(`${tjenesterBaseCdnUrl}/${tjenesterManifest[tjenesterEntry][bundle]}`));
   const Meldekort = React.lazy(() => import(meldekortUrl));
 
