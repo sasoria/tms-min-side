@@ -1,12 +1,13 @@
-const express = require('express');
-const logger = require('./logger');
-const path = require('path');
-const getHtmlWithDecorator = require('./dekorator');
-const basePath = '/minside';
-const buildPath = path.resolve(__dirname, '../dist');
+const express = require("express");
+const logger = require("./logger");
+const path = require("path");
+const getHtmlWithDecorator = require("./dekorator");
+const basePath = "/minside";
+const buildPath = path.resolve(__dirname, "../dist");
 const server = express();
 
-server.disable('x-powered-by');
+server.set("etag", false);
+server.disable("x-powered-by");
 
 server.use(basePath, express.static(buildPath, { index: false }));
 
