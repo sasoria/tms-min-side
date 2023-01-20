@@ -1,9 +1,9 @@
 import React from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import { meldekortUrl, oversiktManifestUrl, oversiktBaseUrl, tjenesterBaseUrl, tjenesterManifestUrl } from "../urls";
-import { arbeidssokerUrl } from "../urls";
-import { aiaBaseUrl, aiaManifestUrl } from "../urls";
+import { meldekortUrl, oversiktManifestUrl, oversiktBaseUrl, aiaBaseCdnUrl } from "../urls";
+import { tjenesterBaseUrl, tjenesterManifestUrl } from "../urls";
+import { aiaManifestUrl, arbeidssokerUrl } from "../urls";
 import { aiaEntry, bundle, oversiktEntry, tjenesterEntry } from "./entrypoints";
 import useStore, { selectIsError, selectSetIsError } from "../store/store";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
@@ -31,7 +31,7 @@ const MinSide = () => {
   }
 
   const ArbeidsflateForInnloggetArbeidssoker = React.lazy(() =>
-    import(`${aiaBaseUrl}/${aiaManifest[aiaEntry][bundle]}`)
+    import(`${aiaBaseCdnUrl}/${aiaManifest[aiaEntry][bundle]}`)
   );
 
   const Oversikt = React.lazy(() => import(`${oversiktBaseUrl}/${oversiktManifest[oversiktEntry][bundle]}`));
