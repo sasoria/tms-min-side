@@ -66,6 +66,12 @@ const TJENESTER_BASE_URL = {
   production: "https://www.nav.no/tms-min-side-tjenester",
 };
 
+const TJENESTER_BASE_CDN_URL = {
+  local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
+  development: "https://cdn.nav.no/min-side/tms-min-side-tjenester/dist",
+  production: "https://cdn.nav.no/min-side/tms-min-side-tjenester/dist",
+};
+
 const VARSLINGER_BASE_URL = {
   local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-varslinger",
@@ -90,7 +96,7 @@ export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];
 export const oversiktBaseUrl = OVERSIKT_BASE_URL[getEnvironment()];
 export const oversiktManifestUrl = `${OVERSIKT_BASE_URL[getEnvironment()]}/manifest.json`;
-export const tjenesterBaseUrl = TJENESTER_BASE_URL[getEnvironment()];
+export const tjenesterBaseCdnUrl = TJENESTER_BASE_CDN_URL[getEnvironment()];
 export const tjenesterManifestUrl = `${TJENESTER_BASE_URL[getEnvironment()]}/manifest.json`;
 export const utkastBaseUrl = UTKAST_BASE_URL[getEnvironment()];
 export const utkastManifestUrl = `${UTKAST_BASE_URL[getEnvironment()]}/manifest.json`;
