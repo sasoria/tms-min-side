@@ -60,6 +60,12 @@ const OVERSIKT_BASE_URL = {
   production: "https://www.nav.no/tms-oversikt-mikrofrontend",
 };
 
+const TIDLIGERE_VARSLER_BASE_URL = {
+  local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
+  development: "https://person.dev.nav.no/tms-min-side-varslinger",
+  production: "https://www.nav.no/tms-min-side-varslinger",
+};
+
 const TJENESTER_BASE_URL = {
   local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-tjenester",
