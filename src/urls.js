@@ -60,6 +60,12 @@ const OVERSIKT_BASE_URL = {
   production: "https://www.nav.no/tms-oversikt-mikrofrontend",
 };
 
+const OVERSIKT_BASE_CDN_URL = {
+  local: "http://localhost:3000/tms-min-side-oversikt/bundle.js",
+  development: "https://cdn.nav.no/min-side/tms-oversikt-mikrofrontend/dist",
+  production: "https://cdn.nav.no/min-side/tms-oversikt-mikrofrontend/dist",
+};
+
 const TIDLIGERE_VARSLER_BASE_URL = {
   local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-varslinger",
@@ -100,7 +106,7 @@ export const arbeidssokerUrl = ARBEIDSSOKER_URL[getEnvironment()];
 export const aiaBaseCdnUrl = AIA_BASE_CDN_URL[getEnvironment()];
 export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];
-export const oversiktBaseUrl = OVERSIKT_BASE_URL[getEnvironment()];
+export const oversiktBaseCdnUrl = OVERSIKT_BASE_CDN_URL[getEnvironment()];
 export const oversiktManifestUrl = `${OVERSIKT_BASE_URL[getEnvironment()]}/manifest.json`;
 export const tidligereVarslerBaseUrl = TIDLIGERE_VARSLER_BASE_URL[getEnvironment()];
 export const tidligereVarslerManifestUrl = `${TIDLIGERE_VARSLER_BASE_URL[getEnvironment()]}/manifest.json`;
