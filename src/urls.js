@@ -42,6 +42,12 @@ const AIA_BASE_URL = {
   production: "https://veientilarbeid.nav.no/esm",
 };
 
+const AIA_BASE_CDN_URL = {
+  local: "http://localhost:3000/aia/bundle.js",
+  development: "https://cdn.nav.no/paw/aia",
+  production: "https://cdn.nav.no/paw/aia",
+};
+
 const MELDEKORT_URL = {
   local: "http://localhost:3000/meldekort/bundle.js",
   development: "https://www.dev.nav.no/meldekort-mikrofrontend/meldekort-mikrofrontend.js",
@@ -60,10 +66,10 @@ const TJENESTER_BASE_URL = {
   production: "https://www.nav.no/tms-min-side-tjenester",
 };
 
-const TIDLIGERE_VARSLER_BASE_URL = {
-  local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-varslinger",
-  production: "https://www.nav.no/tms-min-side-varslinger",
+const TJENESTER_BASE_CDN_URL = {
+  local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
+  development: "https://cdn.nav.no/min-side/tms-min-side-tjenester/dist",
+  production: "https://cdn.nav.no/min-side/tms-min-side-tjenester/dist",
 };
 
 const UTKAST_BASE_URL = {
@@ -85,14 +91,14 @@ export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment(
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
 export const arbeidssokerUrl = ARBEIDSSOKER_URL[getEnvironment()];
-export const aiaBaseUrl = AIA_BASE_URL[getEnvironment()];
+export const aiaBaseCdnUrl = AIA_BASE_CDN_URL[getEnvironment()];
 export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];
 export const oversiktBaseUrl = OVERSIKT_BASE_URL[getEnvironment()];
 export const oversiktManifestUrl = `${OVERSIKT_BASE_URL[getEnvironment()]}/manifest.json`;
 export const tidligereVarslerBaseUrl = TIDLIGERE_VARSLER_BASE_URL[getEnvironment()];
 export const tidligereVarslerManifestUrl = `${TIDLIGERE_VARSLER_BASE_URL[getEnvironment()]}/manifest.json`;
-export const tjenesterBaseUrl = TJENESTER_BASE_URL[getEnvironment()];
+export const tjenesterBaseCdnUrl = TJENESTER_BASE_CDN_URL[getEnvironment()];
 export const tjenesterManifestUrl = `${TJENESTER_BASE_URL[getEnvironment()]}/manifest.json`;
 export const utkastBaseUrl = UTKAST_BASE_URL[getEnvironment()];
 export const utkastManifestUrl = `${UTKAST_BASE_URL[getEnvironment()]}/manifest.json`;
