@@ -3,8 +3,12 @@ export const text = {
     nb: "Min side",
     en: "My page",
   },
-  minSideVarslinger: {
-    nb: "Varslinger",
+  varsler: {
+    nb: "Varsler",
+    en: "Notifications",
+  },
+  tidligereVarslinger: {
+    nb: "Tidligere varsler",
     en: "Notifications",
   },
   utkast: {

@@ -66,6 +66,12 @@ const OVERSIKT_BASE_CDN_URL = {
   production: "https://cdn.nav.no/min-side/tms-oversikt-mikrofrontend/dist",
 };
 
+const TIDLIGERE_VARSLER_BASE_URL = {
+  local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
+  development: "https://person.dev.nav.no/tms-min-side-varslinger",
+  production: "https://www.nav.no/tms-min-side-varslinger",
+};
+
 const TJENESTER_BASE_URL = {
   local: "http://localhost:3000/tms-min-side-tjenester/bundle.js",
   development: "https://person.dev.nav.no/tms-min-side-tjenester",
@@ -78,16 +84,16 @@ const TJENESTER_BASE_CDN_URL = {
   production: "https://cdn.nav.no/min-side/tms-min-side-tjenester/dist",
 };
 
-const VARSLINGER_BASE_URL = {
-  local: "http://localhost:3000/tms-min-side-varslinger/bundle.js",
-  development: "https://person.dev.nav.no/tms-min-side-varslinger",
-  production: "https://www.nav.no/tms-min-side-varslinger",
-};
-
 const UTKAST_BASE_URL = {
   local: "http://localhost:3000/tms-utkast-mikrofrontend/bundle.js",
   development: "https://www.dev.nav.no/tms-utkast-mikrofrontend",
   production: "https://www.nav.no/tms-utkast-mikrofrontend",
+};
+
+const VARSLER_URL = {
+  local: "http://localhost:3000/tms-varsler/bundle.js",
+  development: "https://www.dev.nav.no/tms-varsler/tms-varsler.js",
+  production: "https://www.nav.no/tms-varsler/tms-varsler.js",
 };
 
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
@@ -102,9 +108,10 @@ export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];
 export const oversiktBaseCdnUrl = OVERSIKT_BASE_CDN_URL[getEnvironment()];
 export const oversiktManifestUrl = `${OVERSIKT_BASE_URL[getEnvironment()]}/manifest.json`;
+export const tidligereVarslerBaseUrl = TIDLIGERE_VARSLER_BASE_URL[getEnvironment()];
+export const tidligereVarslerManifestUrl = `${TIDLIGERE_VARSLER_BASE_URL[getEnvironment()]}/manifest.json`;
 export const tjenesterBaseCdnUrl = TJENESTER_BASE_CDN_URL[getEnvironment()];
 export const tjenesterManifestUrl = `${TJENESTER_BASE_URL[getEnvironment()]}/manifest.json`;
 export const utkastBaseUrl = UTKAST_BASE_URL[getEnvironment()];
 export const utkastManifestUrl = `${UTKAST_BASE_URL[getEnvironment()]}/manifest.json`;
-export const varslingerBaseUrl = VARSLINGER_BASE_URL[getEnvironment()];
-export const varslingerManifestUrl = `${VARSLINGER_BASE_URL[getEnvironment()]}/manifest.json`;
+export const varslerUrl = VARSLER_URL[getEnvironment()];
