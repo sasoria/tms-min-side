@@ -24,7 +24,7 @@ const MinSide = () => {
   const [tjenesterManifest, isLoadingTjenesterManifest] = useManifest(tjenesterManifestUrl);
 
   useEffect(() => {
-    logEvent("build", import.meta.env.VITE_BUILD_TIMESTAMP);
+    logEvent("build", "timestamp", import.meta.env.VITE_BUILD_TIMESTAMP);
   }, []);
 
   const isError = useStore(selectIsError);

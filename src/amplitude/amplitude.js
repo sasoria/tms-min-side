@@ -10,7 +10,7 @@ export const initializeAmplitude = () => {
   });
 };
 
-export function logEvent(name, metric) {
+export function logEvent(name, label, metric) {
   amplitude.getInstance().logEvent(name, {
     app: "tms-min-side",
     label: metric,
