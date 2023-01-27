@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { meldekortUrl, oversiktManifestUrl, aiaBaseCdnUrl, tjenesterBaseCdnUrl, oversiktBaseCdnUrl } from "../urls";
@@ -10,7 +10,7 @@ import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useQuery } from "react-query";
 import { useManifest } from "../hooks/useManifest";
 import { fetcher } from "../api/api";
-import { updateUserProperties } from "../amplitude/amplitude";
+import { logEvent, updateUserProperties } from "../amplitude/amplitude";
 import Layout from "../components/layout/Layout";
 
 const MinSide = () => {
@@ -22,6 +22,10 @@ const MinSide = () => {
   const [aiaManifest, isLoadingAiaManifest] = useManifest(aiaManifestUrl);
   const [oversiktManifest, isLoadingOversiktManifest] = useManifest(oversiktManifestUrl);
   const [tjenesterManifest, isLoadingTjenesterManifest] = useManifest(tjenesterManifestUrl);
+
+  useEffect(() => {
+    logEvent("build", import.meta.env.VITE_BUILD_TIMESTAMP);
+  }, []);
 
   const isError = useStore(selectIsError);
   useBreadcrumbs();
