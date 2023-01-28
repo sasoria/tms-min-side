@@ -6,11 +6,10 @@ import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import useStore, { selectLanguage } from "../store/store";
 import { text } from "../language/text";
 import { setParams } from "@navikt/nav-dekoratoren-moduler";
-import { useQuery } from "react-query";
-import { manifestFetcher } from "../api/api";
+import { useManifest } from "../hooks/useManifest";
 
 const Utkast = () => {
-  const { data: manifest, isLoading: isLoadingManifest } = useQuery(utkastManifestUrl, manifestFetcher);
+  const [manifest, isLoadingManifest] = useManifest(utkastManifestUrl);
   const language = useStore(selectLanguage);
 
   useBreadcrumbs([
