@@ -10,13 +10,13 @@ import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useQuery } from "react-query";
 import { useManifest } from "../hooks/useManifest";
 import { fetcher } from "../api/api";
-import { logEvent, updateUserProperties } from "../amplitude/amplitude";
+import { logEvent } from "../amplitude/amplitude";
 import Layout from "../components/layout/Layout";
 
 const MinSide = () => {
   const { data } = useQuery(arbeidssokerUrl, fetcher, {
     onError: useStore(selectSetIsError),
-    onSuccess: (data) => updateUserProperties(data.erArbeidssoker),
+    onSuccess: (data) => logEvent("minside.aia", data.erArbeidssoker),
   });
 
   const [aiaManifest, isLoadingAiaManifest] = useManifest(aiaManifestUrl);
