@@ -30,6 +30,18 @@ const LOGINSERVICE_URL = {
   production: "https://loginservice.nav.no/login?level=Level3",
 };
 
+const AAP_BASE_URL = {
+  local: "http://localhost:3000/aap/bundle.js",
+  development: "https://www.dev.nav.no/aap/aap-min-side-microfrontend",
+  production: "https://www.nav.no/aap/aap-min-side-microfrontend",
+};
+
+const AAP_BASE_CDN_URL = {
+  local: "http://localhost:3000/aap/bundle.js",
+  development: "https://cdn.nav.no/aap/aap-min-side-microfrontend/dist",
+  production: "https://cdn.nav.no/aap/aap-min-side-microfrontend/dist",
+};
+
 const ARBEIDSSOKER_URL = {
   local: "http://localhost:3000/dittnav-api/arbeidssoker",
   development: "https://www.dev.nav.no/aia-backend/er-arbeidssoker",
@@ -96,12 +108,20 @@ const VARSLER_URL = {
   production: "https://www.nav.no/tms-varsler/tms-varsler.js",
 };
 
+const SELECTOR_MIKROFRONTENDS_URL = {
+  local: "http://localhost:3000/tms-min-side-proxy/selector/mikrofrontends",
+  development: "https://www.dev.nav.no/tms-min-side-proxy/selector/mikrofrontends",
+  production: "https://www.nav.no/tms-min-side-proxy/selector/mikrofrontends",
+};
+
 export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const minSideProxyUrl = MIN_SIDE_PROXY_URL[getEnvironment()];
 export const authenticationUrl = `${MIN_SIDE_PROXY_URL[getEnvironment()]}/login/status`;
 export const legacyAuthenticationUrl = LEGACY_AUTHENTICATION_URL[getEnvironment()];
 export const loginserviceUrl = LOGINSERVICE_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
+export const aapBaseCdnUrl = AAP_BASE_CDN_URL[getEnvironment()];
+export const aapManifestUrl = `${AAP_BASE_URL[getEnvironment()]}/manifest.json`;
 export const arbeidssokerUrl = ARBEIDSSOKER_URL[getEnvironment()];
 export const aiaBaseCdnUrl = AIA_BASE_CDN_URL[getEnvironment()];
 export const aiaManifestUrl = `${AIA_BASE_URL[getEnvironment()]}/manifest.json`;
@@ -115,3 +135,4 @@ export const tjenesterManifestUrl = `${TJENESTER_BASE_URL[getEnvironment()]}/man
 export const utkastBaseUrl = UTKAST_BASE_URL[getEnvironment()];
 export const utkastManifestUrl = `${UTKAST_BASE_URL[getEnvironment()]}/manifest.json`;
 export const varslerUrl = VARSLER_URL[getEnvironment()];
+export const selectorMikrofrontendsUrl = SELECTOR_MIKROFRONTENDS_URL[getEnvironment()];
