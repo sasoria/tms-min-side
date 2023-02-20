@@ -18,12 +18,6 @@ export function logEvent(name, metric) {
   });
 }
 
-export function updateUserProperties(hasAia) {
-  amplitude.getInstance().setUserProperties({
-    getsAia: hasAia,
-  });
-}
-
 export function logAmplitudeEventWhenComponentMounted(komponent) {
   useEffect(() => {
     amplitude.getInstance().logEvent("komponent vist", {
