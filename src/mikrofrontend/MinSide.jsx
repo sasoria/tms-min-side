@@ -23,7 +23,7 @@ const MinSide = () => {
   const { data: profil, isLoading: isLoadingProfil } = useQuery(selectorUrl, fetcher, {
     onError: useStore(selectSetIsError),
     onSuccess: (data) => {
-      data.map((id) => {
+      data.microfrontends.map((id) => {
         logEvent(`minside.${id}`, true);
       });
     },
