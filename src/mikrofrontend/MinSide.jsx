@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import {
-  meldekortUrl,
-  oversiktManifestUrl,
-  aiaBaseCdnUrl,
-  tjenesterBaseCdnUrl,
-  oversiktBaseCdnUrl,
-  aapBaseCdnUrl,
-  aapManifestUrl,
-  selectorMikrofrontendsUrl,
-} from "../urls";
+import { meldekortUrl, oversiktManifestUrl, aiaBaseCdnUrl, tjenesterBaseCdnUrl, oversiktBaseCdnUrl } from "../urls";
+import { aapBaseCdnUrl, aapManifestUrl, selectorUrl } from "../urls";
 import { tjenesterManifestUrl } from "../urls";
 import { aiaManifestUrl, arbeidssokerUrl } from "../urls";
 import { aapEntry, aiaEntry, bundle, oversiktEntry, tjenesterEntry } from "./entrypoints";
@@ -23,12 +15,19 @@ import { logEvent } from "../amplitude/amplitude";
 import Layout from "../components/layout/Layout";
 
 const MinSide = () => {
-  const { data } = useQuery(arbeidssokerUrl, fetcher, {
+  const { data: arbeidssoker } = useQuery(arbeidssokerUrl, fetcher, {
     onError: useStore(selectSetIsError),
     onSuccess: (data) => logEvent("minside.aia", data.erArbeidssoker),
   });
 
-  const { data: mikrofrontendOversikt, isLoading: isLoadingOversikt } = useQuery(selectorMikrofrontendsUrl, fetcher);
+  const { data: profil, isLoading: isLoadingProfil } = useQuery(selectorUrl, fetcher, {
+    onError: useStore(selectSetIsError),
+    onSuccess: (data) => {
+      data.microfrontends.map((id) => {
+        logEvent(`minside.${id}`, true);
+      });
+    },
+  });
 
   const [aapManifest, isLoadingAapManifest] = useManifest(aapManifestUrl);
   const [aiaManifest, isLoadingAiaManifest] = useManifest(aiaManifestUrl);
@@ -47,21 +46,22 @@ const MinSide = () => {
     isLoadingOversiktManifest ||
     isLoadingTjenesterManifest ||
     isLoadingAapManifest ||
-    isLoadingOversikt
+    isLoadingProfil
   ) {
     return <ContentLoader />;
   }
 
-  const showAap = mikrofrontendOversikt?.microfrontends.includes("aap");
+  const isAapBruker = profil?.microfrontends.includes("aap");
+  const isArbeidssoker = arbeidssoker?.erArbeidssoker;
 
   const ArbeidsflateForInnloggetArbeidssoker = React.lazy(() =>
     import(`${aiaBaseCdnUrl}/${aiaManifest[aiaEntry][bundle]}`)
   );
 
-  const Arbeidsavklaringspenger = React.lazy(() => import(`${aapBaseCdnUrl}/${aapManifest[aapEntry][bundle]}`));
   const Oversikt = React.lazy(() => import(`${oversiktBaseCdnUrl}/${oversiktManifest[oversiktEntry][bundle]}`));
-  const Tjenester = React.lazy(() => import(`${tjenesterBaseCdnUrl}/${tjenesterManifest[tjenesterEntry][bundle]}`));
   const Meldekort = React.lazy(() => import(meldekortUrl));
+  const Arbeidsavklaringspenger = React.lazy(() => import(`${aapBaseCdnUrl}/${aapManifest[aapEntry][bundle]}`));
+  const Tjenester = React.lazy(() => import(`${tjenesterBaseCdnUrl}/${tjenesterManifest[tjenesterEntry][bundle]}`));
 
   return (
     <Layout isError={isError}>
@@ -72,12 +72,12 @@ const MinSide = () => {
         <ErrorBoundary>
           <Meldekort />
         </ErrorBoundary>
-        {showAap ? (
+        {isAapBruker ? (
           <ErrorBoundary>
             <Arbeidsavklaringspenger />
           </ErrorBoundary>
         ) : null}
-        {data?.erArbeidssoker ? (
+        {isArbeidssoker ? (
           <ErrorBoundary>
             <ArbeidsflateForInnloggetArbeidssoker />
           </ErrorBoundary>
