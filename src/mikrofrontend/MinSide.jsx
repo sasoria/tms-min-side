@@ -22,11 +22,7 @@ const MinSide = () => {
 
   const { data: profil, isLoading: isLoadingProfil } = useQuery(selectorUrl, fetcher, {
     onError: useStore(selectSetIsError),
-    onSuccess: (data) => {
-      data.microfrontends.map((id) => {
-        logEvent(`minside.${id}`, true);
-      });
-    },
+    onSuccess: (data) => data.microfrontends.map((id) => logEvent(`minside.${id}`, true)),
   });
 
   const [aapManifest, isLoadingAapManifest] = useManifest(aapManifestUrl);
