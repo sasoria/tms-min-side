@@ -5,9 +5,7 @@ const getHtmlWithDecorator = require("./dekorator");
 const basePath = "/minside";
 const buildPath = path.resolve(__dirname, "../dist");
 const server = express();
-const nocache = require("nocache");
 
-server.use(nocache());
 server.disable("x-powered-by");
 
 server.use(basePath, express.static(buildPath, { index: false }));
