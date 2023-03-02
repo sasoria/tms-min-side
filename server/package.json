@@ -12,7 +12,6 @@
     "@navikt/nav-dekoratoren-moduler": "1.6.9",
     "cors": "2.8.5",
     "express": "4.17.1",
-    "nocache": "3.0.4",
     "winston": "3.4.0"
   }
 }
