@@ -17,14 +17,16 @@ const App = () => {
     <Router>
       <Routes>
         {basePathWithLocales.map((basePath) => {
-          <>
-            <Route path={basePath} exact element={<MinSide />} />
-            <Route path={`${basePath}/varslinger`} element={<TidligereVarsler />} />
-            <Route path={`${basePath}/tidligere-varsler`} element={<TidligereVarsler />} />
-            <Route path={`${basePath}/varsler`} element={<Varsler />} />
-            <Route path={`${basePath}/arbeidssoker`} element={<Arbeidssoker />} />
-            <Route path={`${basePath}/utkast`} element={<Utkast />} />
-          </>;
+          return (
+            <>
+              <Route path={basePath} exact element={<MinSide />} />
+              <Route path={`${basePath}/varslinger`} element={<TidligereVarsler />} />
+              <Route path={`${basePath}/tidligere-varsler`} element={<TidligereVarsler />} />
+              <Route path={`${basePath}/varsler`} element={<Varsler />} />
+              <Route path={`${basePath}/arbeidssoker`} element={<Arbeidssoker />} />
+              <Route path={`${basePath}/utkast`} element={<Utkast />} />{" "}
+            </>
+          );
         })}
       </Routes>
     </Router>
