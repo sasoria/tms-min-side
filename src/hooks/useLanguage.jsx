@@ -10,8 +10,6 @@ const baseUrlLocale = {
 };
 
 const setInitialLocale = (setLanguage, currentHref) => {
-  console.log("initiell langugae");
-
   if (currentHref.includes(baseUrlLocale.en)) {
     setLanguage("en");
     setParams({ ...Params, language: "en" });
@@ -30,16 +28,19 @@ const setInitialLocale = (setLanguage, currentHref) => {
   }
 };
 
-const updateState = (locale) => {
-  window.history.replaceState(window.history.state, "", baseUrlLocale[locale]);
+const updateState = (newLocale, currentLocale) => {
+  const replacementUrl = window.location.href.replace(baseUrlLocale[currentLocale], baseUrlLocale[newLocale]);
+
+  window.history.replaceState(window.history.state, "", replacementUrl);
 };
 
 export const useLanguage = () => {
   const setLanguage = useStore(selectSetLanguage);
+  const currentLocale = useStore(selectLanguage);
 
   onLanguageSelect((language) => {
     setLanguage(language.locale);
-    updateState(language.locale);
+    updateState(language.locale, currentLocale);
     window.localStorage.setItem("language", language.locale);
     window.dispatchEvent(new Event("storage"));
   });
