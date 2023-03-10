@@ -38,13 +38,13 @@ const AAP_BASE_CDN_URL = {
 
 const ARBEIDSSOKER_URL = {
   local: "http://localhost:3000/dittnav-api/arbeidssoker",
-  development: "https://www.dev.nav.no/aia-backend/er-arbeidssoker",
+  development: "https://www.intern.dev.nav.no/aia-backend/er-arbeidssoker",
   production: "https://www.nav.no/aia-backend/er-arbeidssoker",
 };
 
 const AIA_BASE_URL = {
   local: "http://localhost:3000/aia/bundle.js",
-  development: "https://veientilarbeid.dev.nav.no/esm",
+  development: "https://veientilarbeid.intern.dev.nav.no/esm",
   production: "https://veientilarbeid.nav.no/esm",
 };
 
