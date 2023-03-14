@@ -13,17 +13,17 @@ const setInitialLocale = (setLanguage, currentHref) => {
   if (currentHref.includes(baseUrlLocale.en)) {
     setLanguage("en");
     setParams({ ...Params, language: "en" });
-    window.localStorage.setItem("language", "en");
+    window.sessionStorage.setItem("language", "en");
     window.dispatchEvent(new Event("storage"));
   } else if (currentHref.includes(baseUrlLocale.nn)) {
     setLanguage("nn");
     setParams({ ...Params, language: "nn" });
-    window.localStorage.setItem("language", "nn");
+    window.sessionStorage.setItem("language", "nn");
     window.dispatchEvent(new Event("storage"));
   } else {
     setLanguage("nb");
     setParams({ ...Params, language: "nb" });
-    window.localStorage.setItem("language", "nb");
+    window.sessionStorage.setItem("language", "nb");
     window.dispatchEvent(new Event("storage"));
   }
 };
@@ -41,7 +41,7 @@ export const useLanguage = () => {
   onLanguageSelect((language) => {
     setLanguage(language.locale);
     updateState(language.locale, currentLocale);
-    window.localStorage.setItem("language", language.locale);
+    window.sessionStorage.setItem("language", language.locale);
     window.dispatchEvent(new Event("storage"));
   });
 
