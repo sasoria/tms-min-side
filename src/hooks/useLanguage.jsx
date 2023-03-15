@@ -16,15 +16,13 @@ const setInitialLocale = (setLanguage, currentHref) => {
     window.sessionStorage.setItem("language", "en");
     window.dispatchEvent(new Event("storage"));
     document.documentElement.lang = "en";
-  } else {
-  /* Tilgjngeliggjøre nynorsk
-  else if (currentHref.includes(baseUrlLocale.nn)) {
+  } else if (currentHref.includes(baseUrlLocale.nn)) {
     setLanguage("nn");
     setParams({ ...Params, language: "nn" });
     window.sessionStorage.setItem("language", "nn");
     window.dispatchEvent(new Event("storage"));
-    document.documentElement.lang = "nn"
-  }*/
+    document.documentElement.lang = "nn";
+  } else {
     setLanguage("nb");
     setParams({ ...Params, language: "nb" });
     window.sessionStorage.setItem("language", "nb");
@@ -60,6 +58,10 @@ export const useLanguage = () => {
       },
       {
         locale: "en",
+        handleInApp: true,
+      },
+      {
+        locale: "nn",
         handleInApp: true,
       },
     ]);
