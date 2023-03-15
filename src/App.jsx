@@ -5,13 +5,12 @@ import MinSide from "./mikrofrontend/MinSide";
 import Varsler from "./mikrofrontend/Varsler";
 import TidligereVarsler from "./mikrofrontend/TidligereVarsler";
 import Utkast from "./mikrofrontend/Utkast";
-import useStore, { selectLanguage } from "./store/store";
 import { useLanguage } from "./hooks/useLanguage";
 
 const App = () => {
-  useLanguage();
   const BASEPATH = "/minside";
   const basePathWithLocales = [`${BASEPATH}`, `${BASEPATH}/en`, `${BASEPATH}/nn`];
+  window.location.href.includes("utkast") && useLanguage();
 
   return (
     <Router>
