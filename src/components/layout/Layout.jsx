@@ -1,7 +1,6 @@
 import React from "react";
 import FeilMelding from "../feilmelding/Feilmelding";
 import styles from "./Layout.module.css";
-import { useLanguage } from "../../hooks/useLanguage";
 
 const Layout = ({ children, isError }) => {
   return (
