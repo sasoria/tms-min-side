@@ -50,7 +50,7 @@ export const useLanguage = () => {
   });
 
   useEffect(() => {
-    setInitialLocale(setLanguage, window.location.href);
+    setInitialLocale(setLanguage, window.location.href.toLocaleLowerCase());
     setAvailableLanguages([
       {
         locale: "nb",
