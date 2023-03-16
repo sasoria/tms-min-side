@@ -5,17 +5,28 @@ import MinSide from "./mikrofrontend/MinSide";
 import Varsler from "./mikrofrontend/Varsler";
 import TidligereVarsler from "./mikrofrontend/TidligereVarsler";
 import Utkast from "./mikrofrontend/Utkast";
+import { useLanguage } from "./hooks/useLanguage";
 
 const App = () => {
+  const BASEPATH = "/minside";
+  const basePathWithLocales = [`${BASEPATH}`, `${BASEPATH}/en`, `${BASEPATH}/nn`];
+  window.location.href.toLocaleLowerCase().includes("utkast") && useLanguage();
+
   return (
     <Router>
       <Routes>
-        <Route path="/minside" exact element={<MinSide />} />
-        <Route path="/minside/varslinger" element={<TidligereVarsler />} />
-        <Route path="/minside/tidligere-varsler" element={<TidligereVarsler />} />
-        <Route path="/minside/varsler" element={<Varsler />} />
-        <Route path="/minside/arbeidssoker" element={<Arbeidssoker />} />
-        <Route path="/minside/utkast" element={<Utkast />} />
+        {basePathWithLocales.map((basePath) => {
+          return (
+            <>
+              <Route path={basePath} exact element={<MinSide />} />
+              <Route path={`${basePath}/varslinger`} element={<TidligereVarsler />} />
+              <Route path={`${basePath}/tidligere-varsler`} element={<TidligereVarsler />} />
+              <Route path={`${basePath}/varsler`} element={<Varsler />} />
+              <Route path={`${basePath}/arbeidssoker`} element={<Arbeidssoker />} />
+              <Route path={`${basePath}/utkast`} element={<Utkast />} />{" "}
+            </>
+          );
+        })}
       </Routes>
     </Router>
   );
