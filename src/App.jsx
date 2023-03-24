@@ -10,7 +10,7 @@ import { useLanguage } from "./hooks/useLanguage";
 const App = () => {
   const BASEPATH = "/minside";
   const basePathWithLocales = [`${BASEPATH}`, `${BASEPATH}/en`, `${BASEPATH}/nn`];
-  window.location.href.toLocaleLowerCase().includes("utkast") && useLanguage();
+  useLanguage();
 
   return (
     <Router>
