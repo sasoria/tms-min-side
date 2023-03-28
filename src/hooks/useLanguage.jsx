@@ -14,19 +14,19 @@ const setInitialLocale = (setLanguage, currentHref) => {
     setLanguage("en");
     setParams({ ...Params, language: "en" });
     window.sessionStorage.setItem("language", "en");
-    window.dispatchEvent(new Event("storage"));
+    window.dispatchEvent(new Event("language"));
     document.documentElement.lang = "en";
   } else if (currentHref.includes(baseUrlLocale.nn)) {
     setLanguage("nn");
     setParams({ ...Params, language: "nn" });
     window.sessionStorage.setItem("language", "nn");
-    window.dispatchEvent(new Event("storage"));
+    window.dispatchEvent(new Event("language"));
     document.documentElement.lang = "nn";
   } else {
     setLanguage("nb");
     setParams({ ...Params, language: "nb" });
     window.sessionStorage.setItem("language", "nb");
-    window.dispatchEvent(new Event("storage"));
+    window.dispatchEvent(new Event("language"));
     document.documentElement.lang = "nb";
   }
 };
@@ -45,7 +45,7 @@ export const useLanguage = () => {
     setLanguage(language.locale);
     updateState(language.locale, currentLocale);
     window.sessionStorage.setItem("language", language.locale);
-    window.dispatchEvent(new Event("storage"));
+    window.dispatchEvent(new Event("language"));
     document.documentElement.lang = language.locale;
   });
 
