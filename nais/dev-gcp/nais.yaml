@@ -25,7 +25,7 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: "https://www.dev.nav.no/dekoratoren"
+        - host: "https://www.dev.nav.no"
         - host: "https://dekoratoren.dev.nav.no"
         - host: "https://dekoratoren.ekstern.dev.nav.no"
   resources:

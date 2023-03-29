@@ -28,8 +28,8 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: "https://appres.nav.no/common-html/v4/navno"
-        - host: "https://www.nav.no/dekoratoren"
+        - host: "https://appres.nav.no"
+        - host: "https://www.nav.no"
   resources:
     limits:
       cpu: "3"
