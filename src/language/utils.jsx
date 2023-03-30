@@ -1,7 +1,13 @@
-import Cookies from "js-cookie";
+import { baseUrlWithLanguage } from "../urls";
 
-export const getLanguageFromCookie = () => {
-  const language = Cookies.get("decorator-language");
+export const getLanguageFromUrl = () => {
+  const currentUrl = window.location.href.toLowerCase();
 
-  return language ? language : "nb";
+  if (currentUrl.includes(baseUrlWithLanguage.en)) {
+    return "en";
+  } else if (currentUrl.includes(baseUrlWithLanguage.nn)) {
+    return "nn";
+  } else {
+    return "nb";
+  }
 };

@@ -130,3 +130,9 @@ export const utkastManifestUrl = `${UTKAST_BASE_URL[getEnvironment()]}/manifest.
 export const varslerUrl = VARSLER_URL[getEnvironment()];
 export const selectorUrl = SELECTOR_URL[getEnvironment()];
 export const innloggingsstatistikkUrl = `${MIN_SIDE_PROXY_URL[getEnvironment()]}/statistikk/innlogging`;
+
+export const baseUrlWithLanguage = {
+  nb: `${baseUrl}/minside`,
+  en: `${baseUrl}/minside/en`,
+  nn: `${baseUrl}/minside/nn`,
+};

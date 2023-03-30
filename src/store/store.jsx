@@ -1,5 +1,5 @@
 import create from "zustand";
-import { getLanguageFromCookie } from "../language/utils";
+import { getLanguageFromUrl } from "../language/utils";
 
 export const selectIsError = (state) => state.isError;
 export const selectSetIsError = (state) => state.setIsError;
@@ -18,7 +18,7 @@ const actions = (set) => ({
 });
 
 const useStore = create((set) => ({
-  language: getLanguageFromCookie(),
+  language: getLanguageFromUrl(),
   isError: false,
   ...actions(set),
 }));
