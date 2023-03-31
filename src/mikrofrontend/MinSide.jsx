@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import {
-  meldekortUrl,
-  oversiktManifestUrl,
-  aiaBaseCdnUrl,
-  tjenesterBaseCdnUrl,
-  oversiktBaseCdnUrl,
-  innloggingsstatistikkUrl,
-} from "../urls";
+import { meldekortUrl, oversiktManifestUrl, aiaBaseCdnUrl, tjenesterBaseCdnUrl, oversiktBaseCdnUrl } from "../urls";
 import { aapBaseCdnUrl, aapManifestUrl, selectorUrl } from "../urls";
 import { tjenesterManifestUrl } from "../urls";
 import { aiaManifestUrl, arbeidssokerUrl } from "../urls";
@@ -17,7 +10,7 @@ import useStore, { selectIsError, selectSetIsError } from "../store/store";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useQuery } from "react-query";
 import { useManifest } from "../hooks/useManifest";
-import { fetcher, post } from "../api/api";
+import { fetcher, postInnloggingsstatistikk } from "../api/api";
 import { logEvent } from "../amplitude/amplitude";
 import Layout from "../components/layout/Layout";
 
@@ -39,7 +32,7 @@ const MinSide = () => {
 
   useEffect(() => {
     logEvent("build", import.meta.env.VITE_BUILD_TIMESTAMP);
-    post(innloggingsstatistikkUrl);
+    postInnloggingsstatistikk();
   }, []);
 
   const isError = useStore(selectIsError);

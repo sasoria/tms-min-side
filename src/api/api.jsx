@@ -1,3 +1,5 @@
+import { innloggingsstatistikkUrl } from "../urls.js";
+
 class FetchError extends Error {
   constructor(response, message) {
     super(message);
@@ -28,14 +30,17 @@ export const manifestFetcher = async ({ queryKey }) => {
   return response.json();
 };
 
-export async function post(url) {
-  const response = await fetch(url, {
-    method: "POST",
-    credentials: "same-origin",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  });
-  return response.json();
+export async function postInnloggingsstatistikk() {
+  try {
+    await fetch(innloggingsstatistikkUrl, {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  } catch {
+    console.warn("Klarte ikke å sende innloggingsstatistikk");
+  }
 }

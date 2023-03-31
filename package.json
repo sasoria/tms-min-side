@@ -48,7 +48,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "eslint -c .eslintrc.pre-commit.js --fix",
+      "eslint -c .eslintrc.pre-commit.cjs --fix",
       "prettier --cache --write",
       "git add"
     ],
