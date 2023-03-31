@@ -2,6 +2,7 @@
   "name": "tms-min-side",
   "version": "1.0.0",
   "description": "min-side",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -9,7 +10,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .js,.jsx .",
-    "lint:staged": "eslint -c .eslintrc.pre-commit.js --fix --ext .js,.jsx ."
+    "lint:staged": "eslint -c .eslintrc.pre-commit.cjs --fix --ext .js,.jsx ."
   },
   "author": "navikt",
   "license": "MIT",
