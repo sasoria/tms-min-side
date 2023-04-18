@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { rollupImportMapPlugin } from "rollup-plugin-import-map";
 import { viteMockServe } from "vite-plugin-mock";
 import { terser } from "rollup-plugin-terser";
-import importmap from "./importmap.json";
+import importmap from "./importmap.json" assert { type: "json" };
 
 export default ({ command }) => ({
   plugins: [

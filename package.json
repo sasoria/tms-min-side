@@ -55,5 +55,8 @@
       "prettier --cache --write",
       "git add"
     ]
+  },
+  "engines": {
+    "node": ">=18.15.0"
   }
 }
