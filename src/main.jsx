@@ -8,7 +8,6 @@ import { injectDecoratorClientSide } from "@navikt/nav-dekoratoren-moduler/csr";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./api/query";
 import { getEnvironment } from "./api/environment";
-import { initializeAmplitude } from "./amplitude/amplitude";
 import "./main.css";
 
 if (process.env.NODE_ENV === "development") {
@@ -24,8 +23,6 @@ if (getEnvironment() === "production") {
     tracesSampleRate: 0.1,
   });
 }
-
-initializeAmplitude();
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
