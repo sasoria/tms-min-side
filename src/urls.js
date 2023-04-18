@@ -2,7 +2,7 @@ import { getEnvironment } from "./api/environment";
 
 const MIN_SIDE_PROXY_URL = {
   local: "http://localhost:3000/tms-min-side-proxy",
-  development: "https://www.dev.nav.no/tms-min-side-proxy",
+  development: "https://www.intern.dev.nav.no/tms-min-side-proxy",
   production: "https://www.nav.no/tms-min-side-proxy",
 };
 
@@ -14,7 +14,7 @@ const BASE_URL = {
 
 const LEGACY_AUTHENTICATION_URL = {
   local: "http://localhost:3000/dittnav-api/authPing",
-  development: "https://www.dev.nav.no/dittnav-api/authPing",
+  development: "https://www.intern.dev.nav.no/dittnav-api/authPing",
   production: "https://www.nav.no/dittnav-api/authPing",
 };
 
@@ -22,12 +22,6 @@ const LOGINSERVICE_URL = {
   local: "http://localhost:3000/loginservice",
   development: "https://loginservice.dev.nav.no/login?level=Level3",
   production: "https://loginservice.nav.no/login?level=Level3",
-};
-
-const ARBEIDSSOKER_URL = {
-  local: "http://localhost:3000/dittnav-api/arbeidssoker",
-  development: "https://www.intern.dev.nav.no/aia-backend/er-arbeidssoker",
-  production: "https://www.nav.no/aia-backend/er-arbeidssoker",
 };
 
 const AIA_BASE_URL = {
