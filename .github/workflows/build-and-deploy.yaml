@@ -28,8 +28,6 @@ jobs:
         run: "npm ci"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
-      - name: "Build application"
-        run: 'VITE_BUILD_TIMESTAMP=$(date +"%Y-%m-%dT%H:%M:%S") npm run build'
 
       - name: cdn-upload
         uses: navikt/frontend/actions/cdn-upload/v1@main

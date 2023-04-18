@@ -7,14 +7,12 @@ import useStore, { selectIsError } from "../store/store";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useManifest } from "../hooks/useManifest";
 import { postInnloggingsstatistikk } from "../api/api";
-import { logEvent } from "../amplitude/amplitude";
 import Layout from "../components/layout/Layout";
 
 const MinSide = () => {
   const [oversiktManifest, isLoadingOversiktManifest] = useManifest(oversiktManifestUrl);
 
   useEffect(() => {
-    logEvent("build", import.meta.env.VITE_BUILD_TIMESTAMP);
     postInnloggingsstatistikk();
   }, []);
 
