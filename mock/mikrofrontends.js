@@ -1,6 +1,5 @@
 import minSideOversikt from "./bundle/min-side-oversikt";
 import arbeidsflateForInnloggetArbeidssoker from "./bundle/arbeidsflate-for-innlogget-arbeidssoker";
-import minSideTjenester from "./bundle/min-side-tjenester";
 import minSideVarslinger from "./bundle/min-side-varslinger";
 import utkast from "./bundle/utkast";
 
