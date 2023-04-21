@@ -1,25 +1,23 @@
 import React from "react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import { aiaBaseCdnUrl, aiaManifestUrl } from "../urls";
+import { tidligereVarslerBaseUrl, tidligereVarslerManifestUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import useStore, { selectIsError, selectLanguage } from "../store/store";
 import { text } from "../language/text";
 import Layout from "../components/layout/Layout";
-import { useQuery } from "react-query";
-import { manifestFetcher } from "../api/api";
-import { aiaEntry, bundle } from "./entrypoints";
+import { useManifest } from "../hooks/useManifest";
 
-const Arbeidssoker = () => {
-  const { data: manifest, isLoading: isLoadingManifest } = useQuery(aiaManifestUrl, manifestFetcher);
+const TidligereVarsler = () => {
+  const [manifest, isLoadingManifest] = useManifest(tidligereVarslerManifestUrl);
 
   const language = useStore(selectLanguage);
   const isError = useStore(selectIsError);
 
   useBreadcrumbs([
     {
-      url: `/minside/arbeidssoker`,
-      title: text.arbeidssoker[language],
+      url: `/minside/tidligere-varsler`,
+      title: text.tidligereVarslinger[language],
       handleInApp: true,
     },
   ]);
@@ -28,19 +26,19 @@ const Arbeidssoker = () => {
     return <ContentLoader />;
   }
 
-  const ArbeidsflateForInnloggetArbeidssoker = React.lazy(() =>
-    import(`${aiaBaseCdnUrl}/${manifest[aiaEntry][bundle]}`)
+  const TidligereVarslerMikrofrotend = React.lazy(
+    () => import(`${tidligereVarslerBaseUrl}/${manifest["src/Mikrofrontend.jsx"]["file"]}`)
   );
 
   return (
     <Layout isError={isError}>
       <React.Suspense fallback={<ContentLoader />}>
         <ErrorBoundary>
-          <ArbeidsflateForInnloggetArbeidssoker />
+          <TidligereVarslerMikrofrotend />
         </ErrorBoundary>
       </React.Suspense>
     </Layout>
   );
 };
 
-export default Arbeidssoker;
+export default TidligereVarsler;
