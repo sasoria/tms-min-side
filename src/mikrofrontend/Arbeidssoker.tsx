@@ -1,20 +1,20 @@
 import React from "react";
+import { useStore } from "@nanostores/react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { aiaBaseCdnUrl, aiaManifestUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
-import useStore, { selectIsError, selectLanguage } from "../store/store";
 import { text } from "../language/text";
 import Layout from "../components/layout/Layout";
 import { useQuery } from "react-query";
 import { manifestFetcher } from "../api/api";
 import { aiaEntry, bundle } from "./entrypoints";
+import { isErrorAtom, languageAtom } from "../store/store";
 
 const Arbeidssoker = () => {
   const { data: manifest, isLoading: isLoadingManifest } = useQuery(aiaManifestUrl, manifestFetcher);
-
-  const language = useStore(selectLanguage);
-  const isError = useStore(selectIsError);
+  const isError = useStore(isErrorAtom);
+  const language = useStore(languageAtom);
 
   useBreadcrumbs([
     {

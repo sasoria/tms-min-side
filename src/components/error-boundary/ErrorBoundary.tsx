@@ -1,10 +1,8 @@
 import React, { ErrorInfo } from "react";
-import withStore from "../../store/withStore";
-import { StoreState } from "../../store/store";
+import { setIsError } from "../../store/store";
 
 type Props = {
   children?: React.ReactNode;
-  store: StoreState;
 };
 
 interface State {
@@ -22,7 +20,7 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    this.props.store.setIsError();
+    setIsError();
   }
 
   render() {
@@ -34,4 +32,4 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 }
 
-export default withStore(ErrorBoundary);
+export default ErrorBoundary;

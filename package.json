@@ -15,6 +15,7 @@
   "author": "navikt",
   "license": "MIT",
   "dependencies": {
+    "@nanostores/react": "0.5.0",
     "@navikt/ds-react": "2.9.3",
     "@navikt/ds-tokens": "2.9.3",
     "@navikt/nav-dekoratoren-moduler": "1.9.0",
@@ -22,8 +23,7 @@
     "@sentry/tracing": "7.50.0",
     "react-query": "3.39.3",
     "react-router": "6.11.0",
-    "react-router-dom": "6.11.0",
-    "zustand": "4.3.7"
+    "react-router-dom": "6.11.0"
   },
   "devDependencies": {
     "@types/react": "18.2.0",
