@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query";
+import useSWRImmutable from "swr/immutable";
 import redirectToIdPorten from "../../api/redirect";
 import { authenticationUrl, baseUrl } from "../../urls";
 import { fetcher } from "../../api/api";
@@ -10,14 +10,15 @@ type Props = {
 };
 
 const Authentication = ({ children }: Props) => {
-  const { data: status, isLoading: isLoadingStatus, isError } = useQuery(authenticationUrl, fetcher);
+  const { data: status, isLoading: isLoadingStatus, error } = useSWRImmutable(authenticationUrl, fetcher, { shouldRetryOnError: false });
+
   const redirectUrl = baseUrl + window.location.pathname;
 
   if (isLoadingStatus) {
     return <ContentLoader />;
   }
 
-  if (!status?.authenticated || isError) {
+  if (!status?.authenticated || error) {
     redirectToIdPorten(redirectUrl);
     return null;
   }

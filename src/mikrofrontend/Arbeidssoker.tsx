@@ -2,17 +2,16 @@ import React from "react";
 import { useStore } from "@nanostores/react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import { aiaBaseCdnUrl, aiaManifestUrl } from "../urls";
+import { aiaBaseCdnUrl, aiaManifestUrl, oversiktManifestUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { text } from "../language/text";
 import Layout from "../components/layout/Layout";
-import { useQuery } from "react-query";
-import { manifestFetcher } from "../api/api";
 import { aiaEntry, bundle } from "./entrypoints";
 import { isErrorAtom, languageAtom } from "../store/store";
+import { useManifest } from "../hooks/useManifest";
 
 const Arbeidssoker = () => {
-  const { data: manifest, isLoading: isLoadingManifest } = useQuery(aiaManifestUrl, manifestFetcher);
+  const [manifest, isLoading] = useManifest(oversiktManifestUrl);
   const isError = useStore(isErrorAtom);
   const language = useStore(languageAtom);
 
@@ -24,7 +23,7 @@ const Arbeidssoker = () => {
     },
   ]);
 
-  if (isLoadingManifest) {
+  if (isLoading) {
     return <ContentLoader />;
   }
 
