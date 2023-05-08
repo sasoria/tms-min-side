@@ -1,35 +1,28 @@
-import { QueryFunctionContext } from "react-query";
 import { innloggingsstatistikkUrl } from "../urls.js";
 
-export class FetchError extends Error {
-  response: Response;
-  constructor(response: Response, message: string) {
-    super(message);
-    this.response = response;
-  }
-}
-
-const checkResponse = (response: Response) => {
-  if (!response.ok) {
-    throw new FetchError(response, "Fetch request failed");
-  }
-};
-
-export const fetcher = async ({ queryKey }: QueryFunctionContext) => {
-  const response = await fetch(queryKey.toString(), {
+export const fetcher = async (path: string) => {
+  const response = await fetch(path, {
     method: "GET",
     credentials: "include",
   });
-  checkResponse(response);
 
-  return response.json();
+  if (!response.ok) {
+    throw new Error("Fetch request failed");
+  }
+
+  return await response.json();
 };
 
-export const manifestFetcher = async ({ queryKey }: QueryFunctionContext) => {
-  const response = await fetch(queryKey.toString(), { method: "GET" });
-  checkResponse(response);
+export const manifestFetcher = async (path: string) => {
+  const response = await fetch(path, {
+    method: "GET",
+  });
 
-  return response.json();
+  if (!response.ok) {
+    throw new Error("Fetch request failed");
+  }
+
+  return await response.json();
 };
 
 export async function postInnloggingsstatistikk() {

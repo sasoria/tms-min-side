@@ -5,8 +5,6 @@ import { BrowserTracing } from "@sentry/tracing";
 import App from "./App";
 import Authentication from "./components/authentication/Authentication";
 import { injectDecoratorClientSide } from "@navikt/nav-dekoratoren-moduler/csr";
-import { QueryClientProvider } from "react-query";
-import { queryClient } from "./api/query";
 import { getEnvironment } from "./api/environment";
 import "./main.css";
 
@@ -29,10 +27,8 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <Authentication>
-        <App />
-      </Authentication>
-    </QueryClientProvider>
+    <Authentication>
+      <App />
+    </Authentication>
   </React.StrictMode>
 );
