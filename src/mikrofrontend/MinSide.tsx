@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
+import { useStore } from "@nanostores/react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
 import { oversiktManifestUrl, oversiktBaseCdnUrl } from "../urls";
 import { bundle, oversiktEntry } from "./entrypoints";
-import useStore, { selectIsError } from "../store/store";
+import { isErrorAtom } from "../store/store";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { useManifest } from "../hooks/useManifest";
 import { postInnloggingsstatistikk } from "../api/api";
@@ -16,7 +17,8 @@ const MinSide = () => {
     postInnloggingsstatistikk();
   }, []);
 
-  const isError = useStore(selectIsError);
+
+  const isError = useStore(isErrorAtom);
   useBreadcrumbs([]);
 
   if (isLoadingOversiktManifest) {

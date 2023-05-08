@@ -1,11 +1,12 @@
 import React from "react";
 import { Alert } from "@navikt/ds-react";
-import useStore, { selectLanguage } from "../../store/store";
+import { useStore } from "@nanostores/react";
 import { text } from "../../language/text";
 import styles from "./Feilmelding.module.css";
+import { languageAtom } from "../../store/store";
 
 const FeilMelding = () => {
-  const language = useStore(selectLanguage);
+  const language = useStore(languageAtom);
 
   return (
     <Alert variant="error" className={styles["feilmelding"]}>

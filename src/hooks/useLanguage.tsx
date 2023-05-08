@@ -1,7 +1,8 @@
 import { onLanguageSelect, setAvailableLanguages, setParams } from "@navikt/nav-dekoratoren-moduler";
 import { useEffect } from "react";
-import useStore, { selectSetLanguage, selectLanguage } from "../store/store";
+import { useStore } from "@nanostores/react";
 import { baseUrlWithLanguage } from "../urls";
+import { languageAtom, setLanguage } from "../store/store";
 
 export type Locale = "nb" | "nn" | "en";
 
@@ -20,8 +21,7 @@ const updateState = (newLanguage: Locale, currentLanguage: Locale) => {
 };
 
 export const useLanguage = () => {
-  const setLanguage = useStore(selectSetLanguage);
-  const currentLanguage = useStore(selectLanguage);
+  const currentLanguage = useStore(languageAtom);
 
   onLanguageSelect((language) => {
     updateState(language.locale as Locale, currentLanguage);
