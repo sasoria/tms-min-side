@@ -1,21 +1,18 @@
 import { innloggingsstatistikkUrl } from "../urls.js";
 
-export const fetcher = async (path: string) => {
-  const response = await fetch(path, {
-    method: "GET",
-    credentials: "include",
-  });
+interface Props {
+  path: string;
+  options?: object;
+}
 
-  if (!response.ok) {
-    throw new Error("Fetch request failed");
-  }
-
-  return await response.json();
+export const include = {
+  credentials: "include",
 };
 
-export const manifestFetcher = async (path: string) => {
+export const fetcher = async ({ path, options }: Props) => {
   const response = await fetch(path, {
     method: "GET",
+    ...options,
   });
 
   if (!response.ok) {
