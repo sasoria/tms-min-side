@@ -1,4 +1,4 @@
-import React, { ErrorInfo } from "react";
+import React from "react";
 import { setIsError } from "../../store/store";
 
 type Props = {
@@ -15,11 +15,11 @@ class ErrorBoundary extends React.Component<Props, State> {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: Error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch() {
     setIsError();
   }
 

@@ -1,9 +1,9 @@
 import useSWRImmutable from "swr/immutable";
-import { manifestFetcher } from "../api/api";
+import { fetcher } from "../api/api";
 import { setIsError } from "../store/store";
 
 export const useManifest = (manifestUrl: string) => {
-  const { data: manifest, isLoading: isLoadingManifest } = useSWRImmutable(manifestUrl, manifestFetcher, {
+  const { data: manifest, isLoading: isLoadingManifest } = useSWRImmutable({ path: manifestUrl }, fetcher, {
     shouldRetryOnError: false,
     onError: setIsError,
   });

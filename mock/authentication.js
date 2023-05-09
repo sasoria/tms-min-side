@@ -9,13 +9,4 @@ export default [
         };
       },
     },
-    {
-      url: "/dittnav-api/authPing",
-      method: "get",
-      response: () => {
-        return {
-          ping: "pong",
-        };
-      },
-    },
 ];

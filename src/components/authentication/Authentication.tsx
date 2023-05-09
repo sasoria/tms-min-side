@@ -2,7 +2,7 @@ import React from "react";
 import useSWRImmutable from "swr/immutable";
 import redirectToIdPorten from "../../api/redirect";
 import { authenticationUrl, baseUrl } from "../../urls";
-import { fetcher } from "../../api/api";
+import { fetcher, include } from "../../api/api";
 import ContentLoader from "../loader/ContentLoader";
 
 type Props = {
@@ -10,15 +10,16 @@ type Props = {
 };
 
 const Authentication = ({ children }: Props) => {
-  const { data: status, isLoading: isLoadingStatus, error } = useSWRImmutable(authenticationUrl, fetcher, { shouldRetryOnError: false });
-
+  const { data, isLoading, error } = useSWRImmutable({ path: authenticationUrl, options: include }, fetcher, {
+    shouldRetryOnError: false,
+  });
   const redirectUrl = baseUrl + window.location.pathname;
 
-  if (isLoadingStatus) {
+  if (isLoading) {
     return <ContentLoader />;
   }
 
-  if (!status?.authenticated || error) {
+  if (!data?.authenticated || error) {
     redirectToIdPorten(redirectUrl);
     return null;
   }

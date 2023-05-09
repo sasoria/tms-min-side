@@ -12,14 +12,12 @@ import Layout from "../components/layout/Layout";
 
 const MinSide = () => {
   const [oversiktManifest, isLoadingOversiktManifest] = useManifest(oversiktManifestUrl);
+  const isError = useStore(isErrorAtom);
+  useBreadcrumbs([]);
 
   useEffect(() => {
     postInnloggingsstatistikk();
   }, []);
-
-
-  const isError = useStore(isErrorAtom);
-  useBreadcrumbs([]);
 
   if (isLoadingOversiktManifest) {
     return <ContentLoader />;
