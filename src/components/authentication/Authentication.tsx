@@ -10,19 +10,16 @@ type Props = {
 };
 
 const Authentication = ({ children }: Props) => {
-  const {
-    data: status,
-    isLoading: isLoadingStatus,
-    error,
-  } = useSWRImmutable({ path: authenticationUrl, options: include }, fetcher, { shouldRetryOnError: false });
-
+  const { data, isLoading, error } = useSWRImmutable({ path: authenticationUrl, options: include }, fetcher, {
+    shouldRetryOnError: false,
+  });
   const redirectUrl = baseUrl + window.location.pathname;
 
-  if (isLoadingStatus) {
+  if (isLoading) {
     return <ContentLoader />;
   }
 
-  if (!status?.authenticated || error) {
+  if (!data?.authenticated || error) {
     redirectToIdPorten(redirectUrl);
     return null;
   }
