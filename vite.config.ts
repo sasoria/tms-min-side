@@ -5,7 +5,7 @@ import { viteMockServe } from "vite-plugin-mock";
 import { terser } from "rollup-plugin-terser";
 import importmap from "./importmap.json" assert { type: "json" };
 
-export default ({ command }) => ({
+export default defineConfig(({ command }) => ({
   plugins: [
     react(),
     viteMockServe({
@@ -24,4 +24,4 @@ export default ({ command }) => ({
       generateScopedName: "[name]__[local]___[hash:base64:5]",
     },
   },
-});
+}));

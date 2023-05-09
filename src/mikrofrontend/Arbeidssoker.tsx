@@ -2,7 +2,7 @@ import React from "react";
 import { useStore } from "@nanostores/react";
 import ErrorBoundary from "../components/error-boundary/ErrorBoundary";
 import ContentLoader from "../components/loader/ContentLoader";
-import { aiaBaseCdnUrl, aiaManifestUrl, oversiktManifestUrl } from "../urls";
+import { aiaBaseCdnUrl, aiaManifestUrl } from "../urls";
 import { useBreadcrumbs } from "../hooks/useBreadcrumbs";
 import { text } from "../language/text";
 import Layout from "../components/layout/Layout";
@@ -11,7 +11,7 @@ import { isErrorAtom, languageAtom } from "../store/store";
 import { useManifest } from "../hooks/useManifest";
 
 const Arbeidssoker = () => {
-  const [manifest, isLoading] = useManifest(oversiktManifestUrl);
+  const [manifest, isLoading] = useManifest(aiaManifestUrl);
   const isError = useStore(isErrorAtom);
   const language = useStore(languageAtom);
 

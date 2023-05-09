@@ -30,6 +30,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: "Build application"
         run: "npm run build"
+      - name: "Lint"
+        run: "npm run lint"
 
       - name: cdn-upload
         uses: navikt/frontend/actions/cdn-upload/v1@main
