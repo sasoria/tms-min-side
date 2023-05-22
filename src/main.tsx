@@ -7,7 +7,7 @@ import { injectDecoratorClientSide } from "@navikt/nav-dekoratoren-moduler/csr";
 import { getEnvironment } from "./api/environment";
 import "./main.css";
 
-if (process.env.NODE_ENV === "development") {
+if (getEnvironment() === "development") {
   await injectDecoratorClientSide({
     env: "dev",
     urlLookupTable: false,
