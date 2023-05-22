@@ -7,13 +7,6 @@ import { injectDecoratorClientSide } from "@navikt/nav-dekoratoren-moduler/csr";
 import { getEnvironment } from "./api/environment";
 import "./main.css";
 
-if (getEnvironment() === "development") {
-  await injectDecoratorClientSide({
-    env: "dev",
-    urlLookupTable: false,
-  });
-}
-
 if (getEnvironment() === "production") {
   Sentry.init({
     dsn: "https://06300e573bfb494a8241395dc8d43c0d@sentry.gc.nav.no/129",
