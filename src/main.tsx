@@ -10,6 +10,7 @@ import "./main.css";
 if (process.env.NODE_ENV === "development") {
   await injectDecoratorClientSide({
     env: "dev",
+    urlLookupTable: false,
   });
 }
 
