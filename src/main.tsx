@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import * as Sentry from "@sentry/react";
 import App from "./App";
 import Authentication from "./components/authentication/Authentication";
-import { injectDecoratorClientSide } from "@navikt/nav-dekoratoren-moduler/csr";
 import { getEnvironment } from "./api/environment";
 import "./main.css";
 
