@@ -16,7 +16,7 @@ main {
   }
 }
 
-@media (min-width: 648px) {
+@media (min-width: 960px) {
   .layout {
     margin: 0;
   }
