@@ -1,6 +1,7 @@
 import { baseUrlWithLanguage } from "../urls";
+import { Locale } from "../hooks/useLanguage";
 
-export const getLanguageFromUrl = () => {
+export const getLanguageFromUrl = (): Locale => {
   const currentUrl = window.location.href.toLowerCase();
 
   if (currentUrl.includes(baseUrlWithLanguage.en)) {
