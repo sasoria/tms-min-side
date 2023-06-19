@@ -28,8 +28,8 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: "https://appres.nav.no"
-        - host: "https://www.nav.no"
+        - host: "appres.nav.no"
+        - host: "www.nav.no"
   resources:
     limits:
       cpu: "3"
