@@ -1,7 +1,10 @@
 import { useEffect } from "react";
-import { setBreadcrumbs } from "@navikt/nav-dekoratoren-moduler";
+import { useStore } from "@nanostores/react";
+import { onBreadcrumbClick, setBreadcrumbs } from "@navikt/nav-dekoratoren-moduler";
+import { useNavigate } from "react-router";
 import { text } from "../language/text";
-import type { Language } from "../language/language";
+import { Locale } from "./useLanguage";
+import { languageAtom } from "../store/store";
 
 type Breadcrumb = {
   url: string;
@@ -9,7 +12,14 @@ type Breadcrumb = {
   handleInApp?: boolean;
 };
 
-export const useBreadcrumbs = (breadcrumb: Breadcrumb[], language: Language) => {
+export const useBreadcrumbs = (breadcrumb: Breadcrumb[]) => {
+  const language: Locale = useStore(languageAtom);
+  const navigate = useNavigate();
+
+  onBreadcrumbClick((breadcrumb) => {
+    navigate(breadcrumb.url);
+  });
+
   useEffect(() => {
     const baseBreadcrumbs: Breadcrumb[] = [
       {
@@ -21,5 +31,5 @@ export const useBreadcrumbs = (breadcrumb: Breadcrumb[], language: Language) => 
 
     const breadcrumbs = baseBreadcrumbs.concat(breadcrumb);
     setBreadcrumbs(breadcrumbs);
-  }, []);
+  }, [language]);
 };

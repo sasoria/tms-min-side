@@ -1,10 +1,5 @@
 name: Vulnerabilities scanning of dependencies
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * 4'
-
+on: push
 jobs:
   Vulnerability_scanning:
     runs-on: ubuntu-latest
